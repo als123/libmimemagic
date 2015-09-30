@@ -3,9 +3,6 @@
 import sys;
 import re;
 
-fieldRE = re.compile(r"^(\S+)\s+(\S+)\s+(\S+)\s+(.*)")
-levelRE = re.compile(r"^([>]+)")
-
 #======================================================================
 
 # There may be two or four fields. The third field
@@ -87,10 +84,39 @@ def describeSections(selected):
         print t
 
 
+
+def readExceptions(name):
+    try:
+        f = open(name)
+        exceptions = set()
+
+        # Discard the comments and blank lines.
+        for line in f.readlines():
+            (line, _, _) = line.partition('#')
+            line = line.strip()
+            if len(line) > 0:
+                exceptions.add(line)
+
+        f.close()
+        return exceptions
+
+    except IOError,exn:
+        print >> sys.stderr, "Exception ", exn
+
+    finally:
+        f.close()
+
+
+
 #======================================================================
 
+#  REVISIT recognise sections with a name. Drop sections that call them.
+#  REVISIT print progress messages showing what is happening.
 
 class Entry:
+    levelRE = re.compile(r"^([>]+)")
+    maskedRE = re.compile(r"^(\w+)\&([0-9a-fA-F]+)")
+
     def __init__(self, fields):
         self.fields   = fields
         self.level    = 0
@@ -99,7 +125,7 @@ class Entry:
         self.typed    = False
 
         # Count the number of leading '>'
-        m = levelRE.match(self.fields[0])
+        m = self.levelRE.match(self.fields[0])
         if m != None:
             self.level = len(m.group(1))
 
@@ -128,14 +154,51 @@ class Entry:
         return None
 
 
+    def typeToC(self):
+        tp       = self.getType()
+
+        # REVISIT how do we hit this?
+        if tp == None:
+            return None
+
+        tpName   = None
+        unsigned = 0
+        mask     = None
+
+        if tp[0] == 'u':
+            unsigned = 1
+            tp = tp[1:]
+
+        m = self.maskedRE.match(tp)
+        if m != None:
+            tp = m.group(1)
+            mask = m.group(2)
+
+        if   tp == "byte":      tpName = "TestType_byte"
+        elif tp == "default":   tpName = "TestType_default"
+        elif tp == "beshort":   tpName = "TestType_beshort"
+        elif tp == "leshort":   tpName = "TestType_leshort"
+        elif tp == "belong":    tpName = "TestType_belong"
+        elif tp == "lelong":    tpName = "TestType_lelong"
+        elif tp == "bequad":    tpName = "TestType_bequad"
+        elif tp == "lequad":    tpName = "TestType_lequad"
+        elif tp == "regex":     tpName = "TestType_regex"
+        elif tp == "search":    tpName = "TestType_search"
+        elif tp == "string":    tpName = "TestType_string"
+
+        return (tpName, unsigned, mask)
+
+
     def dump(self):
         print "\t".join(self.fields)
 
 
 class Section:
-    def __init__(self, entry):
+    def __init__(self, entry, exceptions):
         self.entries = [entry]
+        self.exceptions = exceptions
         self.hasMime = False
+        self.hasExcept = False
         self.studyEntry(entry)
 
 
@@ -148,6 +211,10 @@ class Section:
         # see if the section has any mime types
         self.hasMime = self.hasMime or entry.mime
 
+        if entry.getMsg() in self.exceptions:
+            self.hasExcept = True
+
+
 
     def trimToMime(self):
         # Remove all entries after the last mime entry as they
@@ -158,13 +225,34 @@ class Section:
             del self.entries[-1]
 
 
+    def writeToC(self, out):
+        first = 1
+        for e in self.entries:
+            print >> out, "{"
+
+            print >> out, ("   .newSection = %d," % first)
+            print >> out, ("   .level = %d," % e.level)
+
+            tt = e.typeToC()
+            if tt != None:
+                (tpName, unsigned, mask) = tt
+                print >> out, ("   .testType = %s," % tpName)
+                print >> out, ("   .unsignedType = %d," % unsigned)
+                print >> out, ("   .testMask = %s," % mask)
+
+            print >> out, "},\n",
+
+            first = 0
+
+
+
     def dump(self):
         print "\nSection"
         for e in self.entries:
             e.dump()
 
 
-def readFile(name):
+def readFile(name, exceptions):
     try:
         f = open(name)
         lines = f.readlines()
@@ -194,27 +282,35 @@ def readFile(name):
 
                 if fields[0][0] != '>' and fields[0][0] != '!':
                     # Starting a new section
-                    section = Section(entry)
+                    section = Section(entry, exceptions)
                     sections.append(section)
                 else:
                     section.add(entry)
 
         f.close()
         return sections
+
     except IOError,exn:
         print >> sys.stderr, "Exception ", exn
+
+    finally:
+        f.close()
 
 
 
 
 def Main():
-    sections = readFile("magic")
+    exceptions = readExceptions("exceptions")
+    sections = readFile("magic", exceptions)
 
     # Select only those sections that have a mime type
+
+    # If there is a message that is in the exception list
+    # then drop the section.
     selected = []
 
     for s in sections:
-        if s.hasMime:
+        if s.hasMime and not s.hasExcept:
             selected.append(s)
 
     print "# all sections", len(sections)
@@ -225,5 +321,18 @@ def Main():
         s.dump()
 
     describeSections(selected)
+
+    out = open("raw_entries.c", "w")
+
+    print >> out, '#include "mimemagic_priv.h"'
+    print >> out
+    print >> out, 'Entry rawEntries[] = {'
+
+    for s in selected:
+        s.writeToC(out)
+
+    print >> out, '};'
+    out.close()
+
 
 Main()

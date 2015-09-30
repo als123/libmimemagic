@@ -1,0 +1,127 @@
+Magic Exceptions That Have Been Omitter
+=======================================
+
+16-channel Taketracker module sound data
+
+    Taketracker is listed as the second most popular Amiga tracker,
+    which was odd since it's an obscure DOS-software.
+
+
+4-channel Fasttracker module sound data
+Fasttracker II module sound data
+
+    In 1993, Triton released FastTracker. This tracker was able to load
+    and save standard four channel MOD files,
+
+
+4-channel Protracker module sound data
+
+    ProTracker is a popular freeware tracker created by Lars Hamre,
+    Anders Hamre, Sven Vahsen and Rune Johnsrud for the Amiga platform.
+
+8-channel Octalyser module sound data
+4-channel Startracker module sound data
+    Another amiga format
+
+
+ARC archive data, crunched
+ARC+ archive data
+ARJ archive data
+HYP archive data
+StuffIt Archive
+Zoo archive data
+    Obsolete or obscure formats.
+
+
+C source text
+C++ source text
+FORTRAN program
+GNU gettext message catalogue text
+Java source
+Lisp/Scheme program text
+M4 macro processor script text
+
+    These require regexp to recognise.  That's a bit slow.
+
+Cartesian Perceptual Compression image
+    This is a /x- MIME type so it could be omitted for now.
+
+Creative Labs voice data
+Creative Music (CMF) data
+    This is probably well obsolete.
+
+FGF image (GIF+deflate beta)
+    This appears to be experimental.
+
+Foveon X3F raw image data
+    This appears to not have an official Mime type.
+
+Gnumeric spreadsheet
+    This is a bit obscure.
+
+IFF data
+    An ancient Amiga format.
+
+ISO Media
+    This is just an annotation.
+
+Impulse Tracker module sound data -
+    An obsolete sound file format.
+
+JNG video data,
+    An obsolete format. Mozilla no longer supports it.
+
+Java JCE KeyStore
+Java KeyStore
+    Unimportant.
+
+LHa (2.x) archive data [lh4]
+LHarc 1.x archive data [lz4]
+    Mostly obsolete.
+
+MARC21 Classification
+    Obscure.
+
+MBWF/RF64 audio
+    Obscure.
+
+MIPS archive
+    Obsolete
+
+Motorola Quark Express Document (English)
+    Probably obscure
+
+NIFF image data
+    Probably obscure
+
+NekoVM bytecode
+PAK archive data
+Progressive Graphics image data,
+Tokyo Cabinet
+    Probably obscure
+
+
+
+
+
+
+
+
+
+Magic Entries We Are Keeping
+=======================================
+
+Cafe Babe
+    This is a compiled Java class.
+    application/x-java-applet
+
+    Also: JAR compressed with pack200,
+
+DICOM medical imaging data
+    This is cheap to detect
+
+EET archive
+    This might be useful to support in fxlib.
+
+ISO 9660 CD-ROM filesystem data (raw 2352 byte sectors)
+    Who would download this? Keep it in anyway.

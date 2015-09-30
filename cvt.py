@@ -6,6 +6,7 @@ import re;
 fieldRE = re.compile(r"^(\S+)\s+(\S+)\s+(\S+)\s+(.*)")
 levelRE = re.compile(r"^([>]+)")
 
+#======================================================================
 
 # There may be two or four fields. The third field
 # may have quoted white space. We leave the quoting in.
@@ -45,6 +46,48 @@ def splitLine(line):
 
     return fields
 
+
+
+def describeSections(selected):
+    # See what the types are
+    allTypes = set()
+    allTests = set()
+    allMsgs  = set()
+
+    for s in selected:
+        for e in s.entries:
+            t = e.getType()
+            if t != None:
+                allTypes.add(t)
+
+            t = e.getTest()
+            if t != None:
+                allTests.add(t)
+
+            t = e.getMsg()
+            if t != None:
+                allMsgs.add(t)
+
+    print "\n\nAll types"
+    typeList = list(allTypes)
+    typeList.sort()
+    for t in typeList:
+        print t
+
+    print "\n\nAll Tests"
+    testList = list(allTests)
+    testList.sort()
+    for t in testList:
+        print t
+
+    print "\n\nAll Messages"
+    msgList = list(allMsgs)
+    msgList.sort()
+    for t in msgList:
+        print t
+
+
+#======================================================================
 
 
 class Entry:
@@ -181,42 +224,6 @@ def Main():
         s.trimToMime()
         s.dump()
 
-    # See what the types are
-    allTypes = set()
-    allTests = set()
-    allMsgs  = set()
-
-    for s in selected:
-        for e in s.entries:
-            t = e.getType()
-            if t != None:
-                allTypes.add(t)
-
-            t = e.getTest()
-            if t != None:
-                allTests.add(t)
-
-            t = e.getMsg()
-            if t != None:
-                allMsgs.add(t)
-
-    print "\n\nAll types"
-    typeList = list(allTypes)
-    typeList.sort()
-    for t in typeList:
-        print t
-
-    print "\n\nAll Tests"
-    testList = list(allTests)
-    testList.sort()
-    for t in testList:
-        print t
-
-    print "\n\nAll Messages"
-    msgList = list(allMsgs)
-    msgList.sort()
-    for t in msgList:
-        print t
-
+    describeSections(selected)
 
 Main()

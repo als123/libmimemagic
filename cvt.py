@@ -5,6 +5,19 @@ import re;
 
 #======================================================================
 
+# This pattern doesn't match a \n at the end of a line
+endCmntRE = re.compile(r"\s*#.*")
+allCmntRE = re.compile(r"^\s*#.*")
+
+def stripEndCmnt(line):
+    # Strip comments from the end of a line
+    return endCmntRE.sub("", line, count = 1)
+
+def stripAllCmnt(line):
+    # Strip a comment that is an entire line
+    return allCmntRE.sub("", line, count = 1)
+
+
 # There may be two or four fields. The third field
 # may have quoted white space. We leave the quoting in.
 def splitLine(line):
@@ -130,8 +143,10 @@ class Entry:
             self.level = len(m.group(1))
 
         # See if this is a mime type declaration
+        # If so, ensure that stuff at the end of the line is dropped.
         if self.fields[0] == '!:mime':
             self.mime = True
+            self.fields = self.fields[0:2]
         elif self.fields[0] == '!:strength':
             self.strength = True
         elif len(self.fields) >= 2:
@@ -253,18 +268,20 @@ class Section:
 
 
 def readFile(name, exceptions):
+
     try:
         f = open(name)
         lines = f.readlines()
 
-        # Discard the comments and blank lines. A new section starts
-        # with a level-0 first field.
-
+        # A new section starts with a level-0 first field.
         sections = []
         section  = None
 
         for line in lines:
-            (line, _, _) = line.partition('#')
+            # Discard the comments and blank lines. A comment
+            # must have leading white space. Be careful that test strings
+            # can have '#' characters.
+            line = stripAllCmnt(line)
             line = line.strip()
             if len(line) == 0:
                 continue

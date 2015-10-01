@@ -8,6 +8,9 @@ Apple QuickTime movie (unoptimized)
 Big TIFF image data, big-endian
 Big TIFF image data, little-endian
 BitTorrent file
+Bourne-Again shell script executable (binary data)
+Bourne-Again shell script text executable
+C shell script text executable
 Cafe Babe
 Canon CIFF raw image data
 Canon CR2 raw image data
@@ -50,6 +53,7 @@ Freeplane document
 GIF image data
 GIMP XCF image data,
 GNU Info text
+GNU awk script text executable
 GNU dbm 1.x or ndbm database, big endian, 32-bit
 GNU dbm 1.x or ndbm database, big endian, 64-bit
 GNU dbm 1.x or ndbm database, little endian, 32-bit
@@ -75,6 +79,8 @@ JPEG 2000
 JPEG 2000 image
 JPEG image data
 KDE desktop entry
+Korn shell script executable (binary data)
+Korn shell script text executable
 LRZIP compressed data
 LZ4 compressed data (v0.1-v0.9)
 LZ4 compressed data (v1.0-v1.3)
@@ -83,6 +89,7 @@ LaTeX 2e document text
 LaTeX auxiliary file
 LaTeX document text
 LaTeX table of contents
+Lua script text executable
 MNG video data,
 MPEG ADIF, AAC
 MPEG ADTS, AAC
@@ -107,7 +114,10 @@ Microsoft Word Document
 Microsoft Word document data
 Monkey's Audio compressed format
 Musepack audio
+Neil Brown's ae script text executable
+Neil Brown's ash script text executable
 Netpbm PAM image file
+Node.js script text executable
 Ogg data
 Olympus ORF raw image data, big-endian
 Olympus ORF raw image data, little-endian
@@ -122,23 +132,33 @@ PGP message
 PGP public key block
 PGP signature
 PHP script text
+PHP script text executable
 PNG image data
+POSIX shell script executable (binary data)
+POSIX shell script text executable
 POSIX tar archive
 Paint.NET image data
+Paul Falstad's zsh script text executable
+Perl script text executable
 Polar Monitor Bitmap text
 PostScript document text
+Python script text executable
 RAR archive data,
 RPM
 RealAudio sound file
 RealMedia file
 Rich Text Format data,
+Ruby script text executable
 Scribus Document
 TIFF image data, big-endian
 TIFF image data, little-endian
+Tcl script text executable
+Tcl/Tk script text executable
 TeX DVI file
 TeX document text
 TeX font metric data
 TeXmacs document text
+Tenex C shell script text executable
 Texinfo source text
 TrueType font data
 X pixmap image text
@@ -148,7 +168,9 @@ XML document text
 XZ compressed data
 Xcursor data
 Zip multi-volume archive data, at least PKZIP v2.50 to extract
+awk script text executable
 bzip2 compressed data
 cpio archive
+new awk script text executable
 vCalendar calendar file
 vCard visiting card

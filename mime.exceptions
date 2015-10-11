@@ -1,0 +1,267 @@
+# 16-channel Taketracker module sound data
+# 32-channel Taketracker module sound data
+# 4-channel Fasttracker module sound data
+# 4-channel Protracker module sound data
+# 4-channel Startracker module sound data
+# 6-channel Fasttracker module sound data
+# 8-channel Fasttracker module sound data
+# 8-channel Octalyser module sound data
+# 8-channel Octalyzer module sound data
+# 8-channel Startracker module sound data
+# Fasttracker II module sound data
+# Impulse Tracker module sound data -
+# Screamtracker 2 module sound data
+audio/x-mod
+
+# ARC archive data, crunched
+# ARC archive data, dynamic LZW
+# ARC archive data, packed
+# ARC archive data, squashed
+# ARC archive data, squeezed
+# ARC archive data, uncompressed
+# ARC+ archive data
+# PAK archive data
+# HYP archive data
+application/x-arc
+
+# ARJ archive data
+application/x-arj
+
+# Award BIOS Logo, 136 x 126
+# Award BIOS Logo, 136 x 84
+image/x-award-bioslogo
+
+# BCPL source text
+text/x-bcpl
+
+# Berkeley DB
+application/x-dbm
+
+# BinHex binary text
+application/mac-binhex40
+
+# C source text
+text/x-c
+
+# C++ source text
+text/x-c++
+
+# Cartesian Perceptual Compression image
+image/x-cpi
+
+# Creative Labs voice data
+# Creative Music (CMF) data
+audio/x-unknown
+
+# DEC audio data:
+audio/x-dec-basic
+
+# DPX image data, big-endian,
+image/x-dpx
+
+# FGF image (GIF+deflate beta)
+image/x-unknown
+
+# FORTRAN program
+text/x-fortran
+
+# Foveon X3F raw image data
+image/x-x3f
+
+# GNU gettext message catalogue text
+text/x-po
+
+# Gnumeric spreadsheet
+application/x-gnumeric
+
+# IFF data
+audio/x-aiff
+
+# JNG video data,
+video/x-jng
+
+# Java JCE KeyStore
+application/x-java-jce-keystore
+
+# Java KeyStore
+application/x-java-keystore
+
+# Java source
+text/x-java
+
+# LHa (2.x) archive data [lh4]
+# LHa (2.x) archive data [lh5]
+# LHa (2.x) archive data [lh6]
+# LHa (2.x)/LHark archive data [lh7]
+# LHa 2.x? archive data [lh ]
+# LHa 2.x? archive data [lh2]
+# LHa 2.x? archive data [lh3]
+# LHa 2.x? archive data [lhd]
+# LHa/LZS archive data [lzs]
+# LHarc 1.x archive data [lz4]
+# LHarc 1.x archive data [lz5]
+# LHarc 1.x/ARX archive data [lh0]
+# LHarc 1.x/ARX archive data [lh1]
+application/x-lha
+application/x-lharc
+
+# Lisp/Scheme program text
+text/x-lisp
+application/x-elc
+
+# Lotus 1-2-3
+application/x-123
+
+# Lotus WordPro
+application/vnd.lotus-wordpro
+
+# M4 macro processor script text
+text/x-m4
+
+# MARC21 Classification
+application/marc
+
+# Motorola Quark Express Document (English)
+application/x-quark-xpress-3
+
+# NIFF image data
+image/x-niff
+
+# NekoVM bytecode
+application/x-nekovm-bytecode
+
+# Pascal source text
+text/x-pascal
+
+# Progressive Graphics image data,
+image/x-pgf
+
+# Psion Series 5
+image/x-epoc-mbm
+
+# RCS/CVS diff output text
+text/x-diff
+
+# RFC 822 mail text
+message/rfc822
+
+# SGI ICC Profile
+application/vnd.iccprofile
+
+# SMTP mail text
+message/rfc822
+
+# SYSLINUX' LSS16 image data
+image/x-lss16
+
+# Sereal data
+application/sereal
+
+# Silicon Graphics movie file
+video/x-sgi-movie
+
+# Sony Wave64 RIFF data
+audio/x-w64
+
+# SoundBlaster instrument data
+audio/x-unknown
+
+# Spline Font Database
+application/vnd.font-fontforge-sfd
+
+# StuffIt Archive
+# StuffIt Archive (data)
+application/x-stuffit
+
+# Sun KCMS ICC Profile
+application/vnd.iccprofile
+
+# Symbian installation file
+# Symbian installation file (Symbian OS 9.x)
+application/vnd.symbian.install
+
+# System V Release 1 ar archive
+# MIPS archive
+application/x-archive
+
+# TNEF
+# Transport Neutral Encapsulation Format
+application/vnd.ms-tnef
+
+# Tokyo Cabinet
+application/x-tokyocabinet-hash
+application/x-tokyocabinet-btree
+application/x-tokyocabinet-fixed
+application/x-tokyocabinet-table
+
+# WARC Archive
+application/warc
+
+# Windows Program Information File
+application/x-dosexec
+
+# ZIF image (GIF+deflate alpha)
+image/x-unknown
+
+# Zoo archive data
+application/x-zoo
+
+# assembler source text
+text/x-asm
+
+# automake makefile script text
+text/x-makefile
+
+# byte-swapped cpio archive
+application/x-cpio
+
+# compacted data
+# REVISIT
+
+# compress'd data
+application/x-compress
+
+# current ar archive
+application/x-archive
+
+# diff output text
+text/x-diff
+
+# gzip compressed data
+application/x-gzip
+
+# huf output
+# REVISIT
+
+# lzip compressed data
+application/x-lzip
+
+# mail forwarding text
+# mail piping text
+# news or mail text
+# old news text
+message/rfc822
+
+# makefile script text
+text/x-makefile
+
+# news text
+# saved news text
+message/news
+
+# old packed data
+# packed data
+# REVISIT
+
+# sc spreadsheet file
+application/x-sc
+
+# snappy framed data
+application/x-snappy-framed
+
+# tcpdump capture file (big-endian)
+# tcpdump capture file (little-endian)
+application/vnd.tcpdump.pcap
+
+# troff or preprocessor input text
+text/troff

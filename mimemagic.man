@@ -1,0 +1,60 @@
+.\" Copyright (c) Anthony L Shipman 2015
+.\" All Rights Reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions
+.\" are met:
+.\" 1. Redistributions of source code must retain the above copyright
+.\"    notice immediately at the beginning of the file, without modification,
+.\"    this list of conditions, and the following disclaimer.
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+.\" ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE FOR
+.\" ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+.\" SUCH DAMAGE.
+.\"
+.Dd October 5, 2015
+.Dt LIBMIMEMAGIC
+.Os
+.Sh NAME
+.Nm getMimeType
+.Nd MIME type recognition
+.Sh LIBRARY
+MIME type recognition (libmimemagic, -lmimemagic)
+.Sh SYNOPSIS
+.In mimemagic.h
+.Ft int
+.Fn getMimeType "const unsigned char* buf" "size_t len" "char** mime" "int flags"
+.Sh DESCRIPTION
+This function detects the MIME type of the data in the buffer. It is compiled
+automatically from the same decision data used by the libmagic library.
+The
+.Ar flags
+argument can be 
+.Bl -tag -width MAGIC_COMPRESS
+.It Dv MimeMagicNone
+Normal operation
+.It Dv MimeMagicNoTryText
+Avoid trying to recognise plain text and its encoding.
+.El
+.Sh RETURN VALUES
+The function
+returns a value greater than 0 if a MIME type was recognised.
+It returns 0 if no MIME type was recognised. It returns -1 
+if no MIME type was recognised but one might be if a larger
+sample of data was supplied.
+.Sh SEE ALSO
+.Xr file,
+.Xr magic
+.Sh AUTHORS
+.An Anthony L Shipman

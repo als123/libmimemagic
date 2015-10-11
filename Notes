@@ -1,4 +1,4 @@
-Magic Exceptions That Have Been Omitter
+Magic Exceptions That Have Been Omitted
 =======================================
 
 16-channel Taketracker module sound data
@@ -42,6 +42,7 @@ Lisp/Scheme program text
 M4 macro processor script text
 
     These require regexp to recognise.  That's a bit slow.
+    REVISITED - some of these have been put back in
 
 Cartesian Perceptual Compression image
     This is a /x- MIME type so it could be omitted for now.

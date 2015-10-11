@@ -1,0 +1,15 @@
+# KDE Config File
+[KDE Desktop Entry]
+Comment=RealPlayer
+SwallowTitle=
+SwallowExec=
+BinaryPattern=realplayer;RealPlayer;
+Name=RealPlayer8
+Exec=/usr/lib/RealPlayer8/realplay
+Icon=/usr/lib/RealPlayer8/rp7.xpm
+MiniIcon=/usr/lib/RealPlayer8/rp7mini.xpm
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
+MimeType=audio/x-pn-realaudio;audio/vnd.rn-realaudio;application/smil;text/vnd.rn-realtext;video/vnd.rn-realvideo;image/vnd.rn-realflash;application/x-shockwave-flash2-preview;application/sdp;application/x-sdp;application/vnd.rn-realmedia;image/vnd.rn-realpix;audio/wav;audio/x-wav;audio/x-pn-wav;audio/x-pn-windows-acm;audio/basic;audio/x-pn-au;audio/aiff;audio/x-aiff;audio/x-pn-aiff;

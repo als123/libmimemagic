@@ -1,0 +1,64 @@
+#!/usr/bin/python
+
+import os
+import subprocess
+import sys
+
+
+tests = {
+    "test01.sh" :	"text/x-shellscript",
+    "test02.sh" :	"text/x-shellscript",
+    "test03.pl" :	"text/x-perl",
+    "test03b.pl" :	"text/x-perl",
+    "test04.c" :	"test/plain; charset=US-ASCII",
+    "test05.html" :	"text/html",
+    "test06.mp4" :	"video/mp4",
+    "test07.avi" :	"video/x-msvideo",
+    "test08.rar" :	"application/x-rar",
+    "test09.zip" :	"application/zip",
+    "test10.xml" :	"application/xml",
+    "test11.mng" :	"video/x-mng",
+  # "test12.mp3" :	"Unrecognised MIME type",
+    "test13.wav" :	"audio/x-wav",
+    "test14.php" :	"text/x-php",
+    "test15.bz2" :	"application/x-bzip2",
+    "test16.flv" :	"video/x-flv",
+    "test17.bmp" :	"image/x-ms-bmp",
+    "test18.svg" :	"application/xml",
+    "test19.jpg" :	"image/jpeg",
+    "test20.doc" :	"application/msword",
+    "test21.gif" :	"image/gif",
+    "test22.png" :	"image/png",
+    "test23.doc" :	"text/rtf",
+    "test24.ttf" :	"application/x-font-ttf",
+    "test25.otf" :	"application/vnd.ms-opentype",
+    "test26.xcf" :	"image/x-xcf",
+    "test27.tiff" :	"image/tiff",
+    "test28.jp2" :	"image/jp2",
+    "test29.kdelnk" :	"application/x-kdelnk",
+    "test30.doc" :	"application/msword",
+    "test31.mif" :	"application/x-mif",
+    "test32.txt" :	"test/plain; charset=US-ASCII",
+    "test33.tex" :	"text/x-tex",
+    "test34.rpm" :	"application/x-rpm",
+    "test35.tar" :	"application/x-tar",
+    "test36.pdf" :	"application/pdf",
+    "test37.fr"  :      "text/plain; charset=UTF-8",
+    "test38.py"  :      "text/x-python",
+    }
+
+error = False
+
+files = tests.keys()
+files.sort()
+
+for file in files:
+    mime = tests[file]
+    rc = subprocess.call(["run_test", "-f", file, "-m", mime])
+    if rc != 0:
+        #print file, "exit status =", rc
+        error = True
+
+if error:
+    print "Failed"
+    sys.exit(1)

@@ -1,0 +1,8 @@
+
+Some tests set a MIME and have subtests. For example
+    # PKZIP multi-volume archive
+    0	string		PK\x07\x08PK\x03\x04	Zip multi-volume archive data, at least PKZIP v2.50 to extract
+
+At the moment we ignore the subtests and stop at the first MIME.
+
+The rule strength hasn't been taken into account.

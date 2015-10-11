@@ -1,0 +1,266 @@
+ %
+ %
+\chapter{Appendix A: A Five-Minute Introduction to C}
+ %
+\par
+This Appendix provides a brief introduction to that part of the C programming %
+language as used in the examples presented in this book. This appendix %
+is not a reference manual, nor does it describe all of C. Rather, it %
+assumes that you are familiar with other programming languages in general %
+and just need a nudge or two to follow the examples presented in this %
+book. If you want to learn more about the C language, consult ANSI %
+(1990) or Kernighan (1978). If you are interested in C, you should %
+also look into the C++ language. %
+ %
+\par
+The best way to think of the C programming language is to consider %
+it as providing the programmer with a mechanism for allocating and %
+naming memory, control structure, and an extension mechanism. Many %
+people consider it barely a high-level language. Perhaps for that very %
+reason, it is ideally suited for systems and utilities such as text %
+editors. %
+ %
+\par
+The {\it declaration mechanism} provides the programmer a way to allocate %
+and name memory. Data types are oriented around what is best suited %
+to the hardware. %
+ %
+\par
+The {\it language statements} provide a control structure mechanism. %
+ All of the usual control structures are available. In addition, a %
+full suite of arithmetic and bit operators is available, again focusing %
+around what is best suited to the hardware. %
+ %
+\par
+The {\it procedure definition and call mechanism} provide the extension %
+mechanism. Many "standard" C operations such as string copy and input/output %
+are implemented in terms of this mechanism. %
+ %
+\par
+Comments are enclosed in "/* ... */". %
+ %
+ %
+\section{Case Conventions}
+ %
+\par
+The names in this book follow the convention that {\it UPPERCASE} names %
+are pre-defined constants, {\it MixedCase} names are procedures, and %
+{\it lowercase} names are variables. Again, these are conventions, %
+not requirements. %
+ %
+ %
+\section{Data Types and Declarations}
+ %
+\par
+All variables and procedures used are declared. Declarations are of %
+the following form: %
+ %
+\begin{quote}
+{\it type variable}; %
+\end{quote}
+ %
+\par
+The language supports the following data types: %
+ %
+\begin{description} %
+\item[{\bf char}] The variable holds one character. Characters are %
+typically 8 bits wide. They may either be signed (range -128 to +127) %
+or unsigned (range 0 to 255) at the implementation's discretion. %
+ %
+\item[{\bf int}] The variable holds an integer of a size convenient %
+for the hardware. This size is typically 16 or 32 bits. %
+ %
+\item[{\bf float}] The variable holds a floating point number. %
+ %
+\item[{\bf FILE *}] The variable holds a file descriptor. %
+ %
+\item[{\bf struct {\it name} \{ $<$list of declarations$>$ \};}] The %
+declarations are combined into a single, larger data type named {\it name}. %
+ %
+\item[{\bf {\it type} (*{\it name})();}] The {\it name} is the address %
+of a procedure that returns a value of type {\it type}. %
+ %
+\item[{\bf void}] No value. Used to indicate that a procedure does %
+not return anything or accepts no arguments. %
+ %
+\end{description}
+ %
+\par
+A declaration of the form %
+ %
+\begin{quote}
+ {\it type} * %
+\end{quote}
+ %
+\par
+means that the variable holds the address of an object of the specified %
+type. The variable is called a {\it pointer} to the specified type. %
+ A declaration of the form %
+ %
+\begin{quote}
+ {\it type name}[{\it constant}] %
+\end{quote}
+ %
+\par
+means that the variable holds an array of objects of the specified %
+data type. The array is {\it constant} object long. The form %
+ %
+\begin{quote}
+ {\it type name}[{\it constant1}][{\it constant2}] %
+\end{quote}
+ %
+\par
+is used for a two-dimensional array. %
+ %
+\par
+The following data types are not part of the language, but represent %
+types used in examples. An implementation would define these in terms %
+of existing-language data types. %
+ %
+\begin{description} %
+\item[{\bf FLAG}] The variable holds a True or False value. (In C a %
+0 value is considered to be False and any non-zero value is considered %
+to be True.) %
+ %
+\item[{\bf status}] The variable holds a success or failure status %
+value. This value may include warning or error information. %
+ %
+\item[{\bf location}] The variable holds a value that represents a %
+point or mark location within a buffer. %
+ %
+\item[{\bf time}] The variable holds a value that represents the time %
+date and time. %
+ %
+\item[{\bf private}] You get to define this. %
+ %
+\end{description}
+ %
+ %
+\section{Constants}
+ %
+\par
+Integers are written as themselves ({\it e.g.}, "56" means the value %
+fifty-six). %
+ %
+\par
+Hexadecimal constants are written in the form "0x\#\#", where the \#\#s %
+are hexadecimal digits. %
+ %
+\par
+Character strings are enclosed in double quotes (" "). A NUL-terminator %
+(a byte of decimal value 0) is automatically appended to the string %
+by the compiler. Character strings are considered to have the type %
+"array of char." %
+ %
+\par
+Character constants are enclosed in single quotes (''). They are automatically %
+converted to integers whose value is that of the character. For example: %
+ %
+\begin{description} %
+\item[{\bf "a"}] is an array of two characters, consisting of the characters %
+'a' and NUL (values 97 and 0 decimal, assuming ASCII). %
+ %
+\item[{\bf 'a'}] is an integer whose value is 97, assuming ASCII. %
+ %
+\end{description}
+ %
+\par
+while: %
+ %
+\par
+"abc" is an array of four characters, consisting of the characters %
+'a', 'b', 'c', and NUL (values 97, 98, 99, and 0 decimal, assuming %
+ASCII). %
+ %
+The form 'abc' is officialy undefined (some compilers might consider %
+this as an integer whose value is 97 * 65536 + 98 * 256 + 99, but don't %
+count on it). %
+ %
+\par
+The character '$\backslash$b' refers to the ASCII Back Space character %
+(8 decimal). %
+ %
+\par
+Note: the "" / '' syntax is used in all code excerpts. However, the %
+normal English typographical conventions of using "" are followed in %
+the body of the text. %
+ %
+ %
+\section{Pre-defined Constants}
+ %
+\begin{description} %
+\item[{\bf NEWLINE}] The character string that represents a system-specific %
+newline, written "$\backslash$n". %
+ %
+\item[{\bf NL}] The character that represents a newline, 10 decimal. %
+ %
+\item[{\bf SP}] The space character, 32 decimal. %
+ %
+\item[{\bf TAB}] The horizontal tab character, 9 decimal. %
+ %
+\item[{\bf NUL}] The nul character, 0 decimal. Character strings are %
+terminated by this character. %
+ %
+\item[{\bf NULL}] The null pointer: no data object can be at this address. %
+ %
+\item[{\bf BUFFERNAMEMAX}] The size of the longest possible buffer %
+name plus 1 for the trailing NUL. Possibly 33. %
+ %
+\item[{\bf FILENAMEMAX}] The size of the longest possible file name %
+plus 1 for the trailing NUL. Typically 1,025. %
+ %
+\end{description}
+ %
+ %
+\section{Procedure Structure}
+ %
+\par
+Procedures have the following structure: %
+ %
+\par
+\addvspace{\medskipamount} %
+\par
+\noindent{\tt %<pre>
+\footnotesize %{pre1
+{\it type~Name}(<arguments>)\ \\
+\verb_                _\{\ \\
+\verb_                _<local~variables>\ \\
+\ \\
+\verb_                _<statements>\ \\
+\verb_                _\} %
+} %</pre>
+ %
+\par
+\addvspace{\medskipamount} %
+\par
+The procedure is named {\it Name} and returns data of type {\it type} %
+({\it type} can be a structure or pointer as well as a basic type). %
+ The argument list contains a list of declarations or the keyword {\bf void} %
+if the procedure takes no arguments. The local variables are then declared %
+(and may be initialized at each procedure invocation). Last are the %
+procedure statements. %
+ %
+ %
+\section{Statements}
+ %
+\par
+The statements are the usual ones. A semi-colon (";") terminates a %
+statement. Comments start with "/*" and end with "*/". Statements can %
+be grouped with "\{" and "\}" characters, so the sequence %
+ %
+\par
+\addvspace{\medskipamount} %
+\par
+\noindent{\tt %<pre>
+\footnotesize %{pre1
+\verb_        _\{\ \\
+\verb_        _<statement~1>\ \\
+\verb_        _<statement~1>\ \\
+\verb_                _...\ \\
+\verb_        _<statement~n>\ \\
+\verb_        _\} %
+} %</pre>
+ %
+\par
+\addvspace{\medskipamount} is equivalent to one statement. White space %
+and

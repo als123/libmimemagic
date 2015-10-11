@@ -1,0 +1,622 @@
+1027:   > test 0 string = [offset 0] 'ADIF' audio/x-hx-aac-adif
+1185:   > test 0 string = [offset 0] '\x8aMNG' video/x-mng
+1211:   > test 0 string = [offset 0] '\<?xml version="' 
+1213:         test 1 search/1000/c/w = [offset 20] '\<!DOCTYPE X3D' model/x3d
+1992:   > test 0 string = [offset 0] 'Rar!' application/x-rar
+2016:   > test 0 string = [offset 0] 'PK\x07\x08PK\x03\x04' application/zip
+2018:         test 9 ubelong = [offset 30] '0x6d696d65' 
+2019:             test 9 ubelong = [offset 34] '0x74797065' 
+2020:                 test 9 regex = [offset 38] 'application/[a-z+-]+' application/unknown+zip
+2025:   > test 0 string = [offset 0] 'PK\003\004' 
+2044:         test 0 string = [offset 26] '\x8\0\0\0mimetypeapplication/' 
+2083:             test 0 string = [offset 50] 'vnd.oasis.opendocument.' 
+2084:                 test 0 string = [offset 73] 'text' 
+2087:                     test 0 string = [offset 77] '-template' application/vnd.oasis.opendocument.text-template
+2089:                     test 0 string = [offset 77] '-web' application/vnd.oasis.opendocument.text-web
+2091:                     test 0 string = [offset 77] '-master' application/vnd.oasis.opendocument.text-master
+2085:                     test 9 byte =! [offset 77] '0x2d' application/vnd.oasis.opendocument.text
+2093:                 test 0 string = [offset 73] 'graphics' 
+2096:                     test 0 string = [offset 81] '-template' application/vnd.oasis.opendocument.graphics-template
+2094:                     test 9 byte =! [offset 81] '0x2d' application/vnd.oasis.opendocument.graphics
+2098:                 test 0 string = [offset 73] 'presentation' 
+2101:                     test 0 string = [offset 85] '-template' application/vnd.oasis.opendocument.presentation-template
+2099:                     test 9 byte =! [offset 85] '0x2d' application/vnd.oasis.opendocument.presentation
+2103:                 test 0 string = [offset 73] 'spreadsheet' 
+2106:                     test 0 string = [offset 84] '-template' application/vnd.oasis.opendocument.spreadsheet-template
+2104:                     test 9 byte =! [offset 84] '0x2d' application/vnd.oasis.opendocument.spreadsheet
+2108:                 test 0 string = [offset 73] 'chart' 
+2111:                     test 0 string = [offset 78] '-template' application/vnd.oasis.opendocument.chart-template
+2109:                     test 9 byte =! [offset 78] '0x2d' application/vnd.oasis.opendocument.chart
+2113:                 test 0 string = [offset 73] 'formula' 
+2116:                     test 0 string = [offset 80] '-template' application/vnd.oasis.opendocument.formula-template
+2114:                     test 9 byte =! [offset 80] '0x2d' application/vnd.oasis.opendocument.formula
+2118:                 test 0 string = [offset 73] 'database' application/vnd.oasis.opendocument.database
+2120:                 test 0 string = [offset 73] 'image' 
+2123:                     test 0 string = [offset 78] '-template' application/vnd.oasis.opendocument.image-template
+2121:                     test 9 byte =! [offset 78] '0x2d' application/vnd.oasis.opendocument.image
+2129:             test 0 string = [offset 50] 'epub+zip' application/epub+zip
+2138:             test 0 string =! [offset 50] 'epub+zip' 
+2139:                 test 0 string =! [offset 50] 'vnd.oasis.opendocument.' 
+2140:                     test 0 string =! [offset 50] 'vnd.sun.xml.' 
+2141:                         test 0 string =! [offset 50] 'vnd.kde.' 
+2142:                             test 9 regex = [offset 38] '[!-OQ-~]+' application/zip
+2145:         test 0 string = [offset 26] '\x8\0\0\0mimetype' 
+2146:             test 0 string =! [offset 38] 'application/' 
+2147:                 test 9 regex = [offset 38] '[!-OQ-~]+' application/zip
+2151:         test 9 leshort = [offset (26 s + 30)] '0xcafe' application/java-archive
+2156:         test 9 leshort =! [offset (26 s + 30)] '0xcafe' 
+2157:             test 0 string =! [offset 26] '\x8\0\0\0mimetype' application/zip
+2026:         test 9 ubelong =! [offset 30] '0x6d696d65' 
+2035:             test 0 string = [offset 0x161] 'WINZIP' application/zip
+2027:             test 9 byte = [offset 4] '0x00' application/zip
+2029:             test 9 byte = [offset 4] '0x09' application/zip
+2031:             test 9 byte = [offset 4] '0x0a' application/zip
+2033:             test 9 byte = [offset 4] '0x0b' application/zip
+2037:             test 9 byte = [offset 4] '0x14' application/zip
+2231:   > test 0 string = [offset 0] 'd8:announce' application/x-bittorrent
+2521:   > test 0 string = [offset 0] '.snd' 
+2522:         test 9 belong = [offset 12] '1' audio/basic
+2524:         test 9 belong = [offset 12] '2' audio/basic
+2526:         test 9 belong = [offset 12] '3' audio/basic
+2528:         test 9 belong = [offset 12] '4' audio/basic
+2530:         test 9 belong = [offset 12] '5' audio/basic
+2532:         test 9 belong = [offset 12] '6' audio/basic
+2534:         test 9 belong = [offset 12] '7' audio/basic
+2546:         test 9 belong = [offset 12] '23' audio/x-adpcm
+2596:   > test 0 string = [offset 0] 'MThd' audio/midi
+2631:   > test 0 string = [offset 0] '.RMF\0\0\0' application/vnd.rn-realmedia
+2947:   > test 0 string = [offset 0] 'fLaC' audio/x-flac
+3003:   > test 0 string = [offset 0] 'MAC\040' audio/x-ape
+3083:   > test 0 string = [offset 0] 'MP+' audio/x-musepack
+3550:   > test 0 string = [offset 0] 'MC0.0' image/vnd.dwg
+3552:   > test 0 string = [offset 0] 'AC1.2' image/vnd.dwg
+3554:   > test 0 string = [offset 0] 'AC1.3' image/vnd.dwg
+3556:   > test 0 string = [offset 0] 'AC1.40' image/vnd.dwg
+3558:   > test 0 string = [offset 0] 'AC1.50' image/vnd.dwg
+3560:   > test 0 string = [offset 0] 'AC2.10' image/vnd.dwg
+3562:   > test 0 string = [offset 0] 'AC2.21' image/vnd.dwg
+3564:   > test 0 string = [offset 0] 'AC2.22' image/vnd.dwg
+3566:   > test 0 string = [offset 0] 'AC1001' image/vnd.dwg
+3568:   > test 0 string = [offset 0] 'AC1002' image/vnd.dwg
+3570:   > test 0 string = [offset 0] 'AC1003' image/vnd.dwg
+3572:   > test 0 string = [offset 0] 'AC1004' image/vnd.dwg
+3574:   > test 0 string = [offset 0] 'AC1006' image/vnd.dwg
+3576:   > test 0 string = [offset 0] 'AC1009' image/vnd.dwg
+3583:   > test 0 string = [offset 0] 'AC1012' image/vnd.dwg
+3585:   > test 0 string = [offset 0] 'AC1014' image/vnd.dwg
+3587:   > test 0 string = [offset 0] 'AC1015' image/vnd.dwg
+3595:   > test 0 string = [offset 0] 'AC1018' image/vnd.dwg
+3597:   > test 0 string = [offset 0] 'AC1021' image/vnd.dwg
+3599:   > test 0 string = [offset 0] 'AC1024' image/vnd.dwg
+3601:   > test 0 string = [offset 0] 'AC1027' image/vnd.dwg
+4006:   > test 0 string = [offset 0] '<?php /* Smarty version' 
+4007:         test 9 regex = [offset 24] '[0-9.]+' text/x-php
+4093:   > test 0 string = [offset 0] '\037\036' application/octet-stream
+4109:   > test 0 string = [offset 0] '\377\037' application/octet-stream
+4115:   > test 0 string = [offset 0] 'BZh' application/x-bzip2
+4226:   > test 0 string = [offset 0] '7z\274\257\047\034' 
+4228:         test 9 byte x [offset 7] 'x' application/x-7z-compressed
+4246:   > test 0 string = [offset 0] 'LRZI' 
+4248:         test 9 byte x [offset 5] 'x' application/x-lrzip
+4718:   > test 0 string = [offset 0] 'RaS' 
+4721:         test 0 string = [offset 3] '3' application/vnd.cups-raster
+4763:   > test 0 string = [offset 0] 'GDBM' application/x-gdbm
+6071:   > test 0 string = [offset 0] 'FCS3.0' 
+6086:         test 0 string = [offset 0] 'F' application/x-shockwave-flash
+6088:         test 0 string = [offset 0] 'C' application/x-shockwave-flash
+6090:         test 0 string = [offset 0] 'Z' application/x-shockwave-flash
+6104:   > test 0 string = [offset 0] 'FLV\x01' video/x-flv
+6177:   > test 0 string = [offset 0] '\000\001\000\000\000' application/x-font-ttf
+6194:   > test 0 string = [offset 0] 'OTTO' application/vnd.ms-opentype
+6231:   > test 0 string = [offset 0] '\<MakerFile' application/x-mif
+6240:   > test 0 string = [offset 0] '\<MIFFile' application/x-mif
+6251:   > test 0 string = [offset 0] '\<MakerScreenFont' application/x-mif
+6254:   > test 0 string = [offset 0] '\<MML' application/x-mif
+6256:   > test 0 string = [offset 0] '\<BookFile' application/x-mif
+6268:   > test 0 string = [offset 0] '\<Maker' application/x-mif
+6928:   > test 0 string = [offset 0] 'gimp xcf' image/x-xcf
+8186:   > test 0 string = [offset 0] 'P4' 
+8188:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8189:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-bitmap
+8192:   > test 0 string = [offset 0] 'P5' 
+8194:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8195:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-greymap
+8198:   > test 0 string = [offset 0] 'P6' 
+8200:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8201:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-pixmap
+8204:   > test 0 string = [offset 0] 'P7' image/x-portable-pixmap
+8227:   > test 0 string = [offset 0] 'II\x1a\0\0\0HEAPCCDR' image/x-canon-crw
+8237:   > test 0 string = [offset 0] 'II\x2a\0\x10\0\0\0CR' image/x-canon-cr2
+8245:   > test 0 string = [offset 0] 'MM\x00\x2a' image/tiff
+8247:   > test 0 string = [offset 0] 'II\x2a\x00' image/tiff
+8250:   > test 0 string = [offset 0] 'MM\x00\x2b' image/tiff
+8252:   > test 0 string = [offset 0] 'II\x2b\x00' image/tiff
+8261:   > test 0 string = [offset 0] '\x89PNG\x0d\x0a\x1a\x0a' image/png
+8294:   > test 0 string = [offset 0] 'GIF8' image/gif
+8373:   > test 0 string = [offset 0] 'AWBM' 
+8374:         test 9 leshort < [offset 4] '1981' image/x-award-bmp
+8393:   > test 0 string = [offset 0] 'BM' 
+8394:         test 9 leshort = [offset 14] '12' image/x-ms-bmp
+8398:         test 9 leshort = [offset 14] '64' image/x-ms-bmp
+8402:         test 9 leshort = [offset 14] '40' image/x-ms-bmp
+8407:         test 9 leshort = [offset 14] '124' image/x-ms-bmp
+8412:         test 9 leshort = [offset 14] '108' image/x-ms-bmp
+8417:         test 9 leshort = [offset 14] '128' image/x-ms-bmp
+8635:   > test 0 string = [offset 0] '8BPS' image/vnd.adobe.photoshop
+8806:   > test 0 string = [offset 0] 'AT&TFORM' 
+8807:         test 0 string = [offset 12] 'DJVM' image/vnd.djvu
+8809:         test 0 string = [offset 12] 'DJVU' image/vnd.djvu
+8811:         test 0 string = [offset 12] 'DJVI' image/vnd.djvu
+8813:         test 0 string = [offset 12] 'THUM' image/vnd.djvu
+8881:   > test 0 string = [offset 0] '\211HDF\r\n\032\n' application/x-hdf
+8957:   > test 0 string = [offset 0] '[BitmapInfo2]' image/x-polar-monitor-bitmap
+8976:   > test 0 string = [offset 0] 'MMOR' image/x-olympus-orf
+8978:   > test 0 string = [offset 0] 'IIRO' image/x-olympus-orf
+8980:   > test 0 string = [offset 0] 'IIRS' image/x-olympus-orf
+9018:   > test 0 string = [offset 0] 'PDN3' image/x-paintnet
+9380:   > test 0 string = [offset 0] '\x00\x00\x00\x0C\x6A\x50\x20\x20\x0D\x0A\x87\x0A' 
+9386:         test 0 string = [offset 20] '\x6a\x70\x32\x20' image/jp2
+9388:         test 0 string = [offset 20] '\x6a\x70\x78\x20' image/jpx
+9390:         test 0 string = [offset 20] '\x6a\x70\x6d\x20' image/jpm
+9392:         test 0 string = [offset 20] '\x6d\x6a\x70\x32' video/mj2
+9760:   > test 0 string = [offset 0] 'LPKSHHRH' 
+9762:         test 9 ubyte&252 = [offset 16] '0' 
+9764:             test 9 ubequad > [offset 24] '0' 
+9765:                 test 9 ubequad > [offset 32] '0' 
+9766:                     test 9 ubequad > [offset 40] '0' 
+9767:                         test 9 ubequad > [offset 48] '0' 
+9768:                             test 9 ubequad > [offset 56] '0' 
+9769:                                 test 9 ubequad > [offset 64] '0' application/octet-stream
+12112:  > test 0 string = [offset 0] '[KDE Desktop Entry]' application/x-kdelnk
+12114:  > test 0 string = [offset 0] '# KDE Config File' application/x-kdelnk
+12116:  > test 0 string = [offset 0] '# xmcd' text/x-xmcd
+12146:  > test 0 string = [offset 0] '\<?xml' 
+12147:        test 1 search/400 = [offset 20] ' xmlns=' 
+12148:            test 9 regex = [offset & 0] '['"]http://earth.google.com/kml' application/vnd.google-earth.kml+xml
+12160:            test 9 regex = [offset & 0] '['"]http://www.opengis.net/kml' application/vnd.google-earth.kml+xml
+12168:  > test 0 string = [offset 0] 'PK\003\004' 
+12169:        test 9 byte = [offset 4] '0x14' 
+12170:            test 0 string = [offset 30] 'doc.kml' application/vnd.google-earth.kmz
+12227:  > test 0 string = [offset 0] '\012(' application/x-elc
+12232:  > test 0 string = [offset 0] ';ELC' 
+12234:        test 9 byte < [offset 4] '32' application/x-elc
+13052:  > test 0 string = [offset 0] '#\x20abook\x20addressbook\x20file' application/x-abook-addressbook
+13167:  > test 0 string = [offset 0] '@' 
+13168:        test 0 string/W/c = [offset 1] ' echo off' text/x-msdos-batch
+13170:        test 0 string/W/c = [offset 1] 'echo off' text/x-msdos-batch
+13172:        test 0 string/W/c = [offset 1] 'rem' text/x-msdos-batch
+13174:        test 0 string/W/c = [offset 1] 'set ' text/x-msdos-batch
+13202:  > test 0 string = [offset 0] 'MZ' 
+13411:        test 0 string = [offset 0x1e] 'Copyright 1989-1990 PKWARE Inc.' application/zip
+13414:        test 0 string = [offset 0x1e] 'PKLITE Copr.' application/zip
+13662:  > test 0 string = [offset 0] 'PO^Q`' application/msword
+13665:  > test 0 string = [offset 0] '\376\067\0\043' application/msword
+13667:  > test 0 string = [offset 0] '\333\245-\0\0\0' application/msword
+13673:  > test 0 string = [offset 0] '\xDB\xA5\x2D\x00' application/msword
+13679:  > test 0 string = [offset 0] '\xDB\xA5\x2D\x00' application/msword
+13691:  > test 0 string = [offset 0] '\x09\x04\x06\x00\x00\x00\x10\x00' application/vnd.ms-excel
+13941:  > test 0 string = [offset 0] 'MSCF\0\0\0\0' application/vnd.ms-cab-compressed
+13980:  > test 0 string = [offset 0] '\320\317\021\340\241\261\032\341' 
+13983:        test 0 string = [offset 546] 'bjbj' application/msword
+13985:        test 0 string = [offset 546] 'jbjb' application/msword
+13988:  > test 0 string = [offset 0] '\224\246\056' application/msword
+14020:  > test 0 string = [offset 0] 'ITOLITLS' 
+14021:        test 9 lelong x [offset 8] 'x' application/x-ms-reader
+14092:  > test 0 string = [offset 0] 'PK\003\004' 
+14095:        test 9 regex = [offset 0x1E] '\[Content_Types\]\.xml|_rels/\.rels' 
+14099:            test 1 search/2000 = [offset (18 l + 49)] 'PK\003\004' 
+14102:                test 1 search/1000 = [offset & 26] 'PK\003\004' 
+14106:                    test 0 string = [offset & 26] 'word/' application/vnd.openxmlformats-officedocument.wordprocessingml.document
+14108:                    test 0 string = [offset & 26] 'ppt/' application/vnd.openxmlformats-officedocument.presentationml.presentation
+14110:                    test 0 string = [offset & 26] 'xl/' application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+15428:  > test 0 string = [offset 0] '%PDF-' application/pdf
+15435:  > test 0 string = [offset 0] '%FDF-' application/vnd.fdf
+15646:  > test 0 string = [offset 0] '-----BEGIN\040PGP\40MESSAGE-' application/pgp
+15648:  > test 0 string = [offset 0] '-----BEGIN\040PGP\40SIGNATURE-' application/pgp-signature
+15655:  > test 0 string = [offset 0] '# PaCkAgE DaTaStReAm' application/x-svr4-package
+15700:  > test 0 string = [offset 0] '%!' application/postscript
+15711:  > test 0 string = [offset 0] '\004%!' application/postscript
+16069:  > test 0 string = [offset 0] 'RIFF' 
+16094:        test 0 string = [offset 8] 'WAVE' audio/x-wav
+16099:        test 0 string = [offset 8] 'CDRA' image/x-coreldraw
+16101:        test 0 string = [offset 8] 'CDR6' image/x-coreldraw
+16105:        test 0 string = [offset 8] 'AVI\040' video/x-msvideo
+16298:  > test 0 string = [offset 0] 'RF64\xff\xff\xff\xffWAVEds64' audio/x-wav
+17078:  > test 0 string = [offset 0] 'drpm' application/x-rpm
+17097:  > test 0 string = [offset 0] '{\\rtf' text/rtf
+17255:  > test 0 string = [offset 0] 'HEADER   ' 
+17256:        test 9 regex/1/l = [offset & 0] '\^.{40}' 
+17257:            test 9 regex/1/l = [offset & 0] '[0-9]{2}-[A-Z]{3}-[0-9]{2} {3}' 
+17258:                test 9 regex/1/l/s = [offset & 0] '[A-Z0-9]{4}.{14}$' 
+17259:                    test 9 regex/1/l = [offset & 0] '[A-Z0-9]{4}' chemical/x-pdb
+17530:  > test 0 string = [offset 0] '\<?xml version="' 
+17531:        test 0 string > [offset 15] '\0' 
+17532:            test 1 search/4096 = [offset 19] '\<svg' image/svg+xml
+17534:            test 1 search/4096 = [offset 19] '\<gnc-v2' application/x-gnucash
+17538:  > test 0 string = [offset 0] '\<?xml version="' 
+17539:        test 0 string > [offset 15] '\0' 
+17540:            test 1 search/4096 = [offset 19] '\<urlset' application/xml-sitemap
+17551:  > test 0 string = [offset 0] '\<?xml version="' 
+17552:        test 0 string > [offset 15] '\0' 
+17553:            test 1 search/4096/W/c = [offset 19] '\<!doctype html' text/html
+17555:  > test 0 string = [offset 0] '\<?xml version='' 
+17556:        test 0 string > [offset 15] '\0' 
+17557:            test 1 search/4096/W/c = [offset 19] '\<!doctype html' text/html
+17559:  > test 0 string = [offset 0] '\<?xml version="' 
+17560:        test 0 string > [offset 15] '\0' 
+17561:            test 1 search/4096/W/c = [offset 19] '\<html' text/html
+17599:  > test 0 string = [offset 0] '\<?xml version "' application/xml
+17602:  > test 0 string = [offset 0] '\<?xml version="' application/xml
+17608:  > test 0 string = [offset 0] '\<?xml version='' application/xml
+18830:  > test 0 string = [offset 0] '\367\002' application/x-dvi
+19762:  > test 0 string = [offset 0] 'OggS' application/ogg
+19882:  > test 0 string = [offset 0] 'filedesc://' application/x-ia-arc
+20385:  > test 0 string = [offset 0] 'DOC' 
+20386:        test 9 byte = [offset 43] '0x14' application/x-ichitaro4
+20390:  > test 0 string = [offset 0] 'DOC' 
+20391:        test 9 byte = [offset 43] '0x15' application/x-ichitaro5
+20394:  > test 0 string = [offset 0] 'DOC' 
+20395:        test 9 byte = [offset 43] '0x16' application/x-ichitaro6
+20411:  > test 0 string = [offset 0] '\<SCRIBUSUTF8NEW Version' application/x-scribus
+20627:  > test 0 string = [offset 0] 'Xcur' image/x-xcursor
+8885:   > test 0 string = [offset 1024] '\211HDF\r\n\032\n' application/x-hdf
+2185:   > test 0 string = [offset 10] '# This is a shell archive' application/octet-stream
+8525:   > test 0 string = [offset 128] 'DICM' application/dicom
+4727:   > test 0 string = [offset 1] 'SaR' 
+4730:         test 0 string = [offset 0] '3' application/vnd.cups-raster
+8887:   > test 0 string = [offset 2048] '\211HDF\r\n\032\n' application/x-hdf
+13651:  > test 0 string = [offset 2080] 'Microsoft Word 6.0 Document' application/msword
+13653:  > test 0 string = [offset 2080] 'Documento Microsoft Word 6' application/msword
+13676:  > test 0 string = [offset 2080] 'Microsoft Excel 5.0 Worksheet' application/vnd.ms-excel
+13682:  > test 0 string = [offset 2080] 'Foglio di lavoro Microsoft Exce' application/vnd.ms-excel
+13656:  > test 0 string = [offset 2112] 'MSWordDoc' application/msword
+13686:  > test 0 string = [offset 2114] 'Biff5' application/vnd.ms-excel
+13689:  > test 0 string = [offset 2121] 'Biff5' application/vnd.ms-excel
+1439:   > test 0 string = [offset 257] 'ustar\0' application/x-tar
+1441:   > test 0 string = [offset 257] 'ustar\040\040\0' application/x-tar
+15644:  > test 0 string = [offset 2] '---BEGIN PGP PUBLIC KEY BLOCK-' application/pgp-keys
+18843:  > test 0 string = [offset 2] '\000\021' application/x-tex-tfm
+18846:  > test 0 string = [offset 2] '\000\022' application/x-tex-tfm
+11702:  > test 0 string = [offset 32769] 'CD001' application/x-iso9660-image
+11704:        test 0 string =! [offset 38913] 'NSR0' application/x-iso9660-image
+6203:   > test 0 string = [offset 34] 'LP' application/vnd.ms-fontobject
+11715:  > test 0 string = [offset 37633] 'CD001' application/x-iso9660-image
+8889:   > test 0 string = [offset 4096] '\211HDF\r\n\032\n' application/x-hdf
+480:    > test 0 string = [offset 4] 'moov' video/quicktime
+486:    > test 0 string = [offset 4] 'mdat' video/quicktime
+494:    > test 0 string = [offset 4] 'idsc' image/x-quicktime
+498:    > test 0 string = [offset 4] 'pckg' application/x-quicktime-player
+502:    > test 0 string = [offset 4] 'ftyp' 
+503:          test 0 string = [offset 8] 'isom' video/mp4
+506:          test 0 string = [offset 8] 'mp41' video/mp4
+508:          test 0 string = [offset 8] 'mp42' video/mp4
+514:          test 0 string = [offset 8] '3ge' video/3gpp
+516:          test 0 string = [offset 8] '3gg' video/3gpp
+518:          test 0 string = [offset 8] '3gp' video/3gpp
+520:          test 0 string = [offset 8] '3gs' video/3gpp
+522:          test 0 string = [offset 8] '3g2' video/3gpp2
+527:          test 0 string = [offset 8] 'mmp4' video/mp4
+529:          test 0 string = [offset 8] 'avc1' video/3gpp
+512:          test 0 string/W = [offset 8] 'jp2' image/jp2
+531:          test 0 string/W = [offset 8] 'M4A' audio/mp4
+533:          test 0 string/W = [offset 8] 'M4V' video/mp4
+537:          test 0 string/W = [offset 8] 'qt' video/quicktime
+5149:   > test 0 string = [offset 4] 'Standard Jet DB' application/x-msaccess
+5151:   > test 0 string = [offset 4] 'Standard ACE DB' application/x-msaccess
+8883:   > test 0 string = [offset 512] '\211HDF\r\n\032\n' application/x-hdf
+13669:  > test 0 string = [offset 512] '\354\245\301' application/msword
+13991:  > test 0 string = [offset 512] 'R\0o\0o\0t\0 \0E\0n\0t\0r\0y' application/msword
+20354:  > test 0 string = [offset 512] 'R\0o\0o\0t\0' application/x-hwp
+17008:  > test 0 string = [offset 60] 'RINEX' 
+17009:        test 1 search/256 = [offset 80] 'XXRINEXB' 
+17011:            test 0 string x [offset 5] 'x' rinex/broadcast
+17013:        test 1 search/256 = [offset 80] 'XXRINEXD' 
+17015:            test 0 string x [offset 5] 'x' rinex/observation
+17017:        test 1 search/256 = [offset 80] 'XXRINEXC' 
+17019:            test 0 string x [offset 5] 'x' rinex/clock
+17021:        test 1 search/256 = [offset 80] 'XXRINEXH' 
+17023:            test 0 string x [offset 5] 'x' rinex/navigation
+17025:        test 1 search/256 = [offset 80] 'XXRINEXG' 
+17027:            test 0 string x [offset 5] 'x' rinex/navigation
+17029:        test 1 search/256 = [offset 80] 'XXRINEXL' 
+17031:            test 0 string x [offset 5] 'x' rinex/navigation
+17033:        test 1 search/256 = [offset 80] 'XXRINEXM' 
+17035:            test 0 string x [offset 5] 'x' rinex/meteorological
+17037:        test 1 search/256 = [offset 80] 'XXRINEXN' 
+17039:            test 0 string x [offset 5] 'x' rinex/navigation
+17041:        test 1 search/256 = [offset 80] 'XXRINEXO' 
+17043:            test 0 string x [offset 5] 'x' rinex/observation
+1523:   > test 0 string =! [offset 0] '<arch>\ndebian' 
+1524:         test 0 string = [offset 8] 'debian-split' application/vnd.debian.binary-package
+1526:         test 0 string = [offset 8] 'debian-binary' application/vnd.debian.binary-package
+500:    > test 0 string/W = [offset 4] 'jP' image/jp2
+13032:  > test 0 string/c = [offset 0] 'BEGIN:VCALENDAR' text/calendar
+13034:  > test 0 string/c = [offset 0] 'BEGIN:VCARD' text/x-vcard
+1204:   > test 0 string/w = [offset 0] '#VRML V1.0 ascii' model/vrml
+1206:   > test 0 string/w = [offset 0] '#VRML V2.0 utf8' model/vrml
+3914:   > test 0 string/w = [offset 0] '#! /bin/sh' text/x-shellscript
+3916:   > test 0 string/w = [offset 0] '#! /bin/sh' text/x-shellscript
+3919:   > test 0 string/w = [offset 0] '#! /bin/csh' text/x-shellscript
+3923:   > test 0 string/w = [offset 0] '#! /bin/ksh' text/x-shellscript
+3925:   > test 0 string/w = [offset 0] '#! /bin/ksh' text/x-shellscript
+3928:   > test 0 string/w = [offset 0] '#! /bin/tcsh' text/x-shellscript
+3930:   > test 0 string/w = [offset 0] '#! /usr/bin/tcsh' text/x-shellscript
+3932:   > test 0 string/w = [offset 0] '#! /usr/local/tcsh' text/x-shellscript
+3934:   > test 0 string/w = [offset 0] '#! /usr/local/bin/tcsh' text/x-shellscript
+3939:   > test 0 string/w = [offset 0] '#! /bin/zsh' text/x-shellscript
+3941:   > test 0 string/w = [offset 0] '#! /usr/bin/zsh' text/x-shellscript
+3943:   > test 0 string/w = [offset 0] '#! /usr/local/bin/zsh' text/x-shellscript
+3945:   > test 0 string/w = [offset 0] '#! /usr/local/bin/ash' text/x-shellscript
+3947:   > test 0 string/w = [offset 0] '#! /usr/local/bin/ae' text/x-shellscript
+3949:   > test 0 string/w = [offset 0] '#! /bin/nawk' text/x-nawk
+3951:   > test 0 string/w = [offset 0] '#! /usr/bin/nawk' text/x-nawk
+3953:   > test 0 string/w = [offset 0] '#! /usr/local/bin/nawk' text/x-nawk
+3955:   > test 0 string/w = [offset 0] '#! /bin/gawk' text/x-gawk
+3957:   > test 0 string/w = [offset 0] '#! /usr/bin/gawk' text/x-gawk
+3959:   > test 0 string/w = [offset 0] '#! /usr/local/bin/gawk' text/x-gawk
+3962:   > test 0 string/w = [offset 0] '#! /bin/awk' text/x-awk
+3964:   > test 0 string/w = [offset 0] '#! /usr/bin/awk' text/x-awk
+3972:   > test 0 string/w = [offset 0] '#! /bin/bash' text/x-shellscript
+3974:   > test 0 string/w = [offset 0] '#! /bin/bash' text/x-shellscript
+3976:   > test 0 string/w = [offset 0] '#! /usr/bin/bash' text/x-shellscript
+3978:   > test 0 string/w = [offset 0] '#! /usr/bin/bash' text/x-shellscript
+3980:   > test 0 string/w = [offset 0] '#! /usr/local/bash' text/x-shellscript
+3982:   > test 0 string/w = [offset 0] '#! /usr/local/bash' text/x-shellscript
+3984:   > test 0 string/w = [offset 0] '#! /usr/local/bin/bash' text/x-shellscript
+3986:   > test 0 string/w = [offset 0] '#! /usr/local/bin/bash' text/x-shellscript
+20400:  > test 0 string/w = [offset 0] '\<map version' application/x-freemind
+20405:  > test 0 string/w = [offset 0] '\<map version="freeplane' application/x-freeplane
+4242:   > test 0 ustring = [offset 0] '\xFD7zXZ\x00' application/x-xz
+3994:   > test 1 search/1 = [offset 0] '<?\n' text/x-php
+3996:   > test 1 search/1 = [offset 0] '<?\r' text/x-php
+6246:   > test 1 search/1 = [offset 0] '\<MakerDictionary' application/x-mif
+8168:   > test 1 search/1 = [offset 0] 'P1' 
+8170:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8171:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-bitmap
+8174:   > test 1 search/1 = [offset 0] 'P2' 
+8176:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8177:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-greymap
+8180:   > test 1 search/1 = [offset 0] 'P3' 
+8182:         test 9 regex = [offset 3] '=[0-9]{1,50} ' 
+8183:             test 9 regex = [offset 3] '= [0-9]{1,50}' image/x-portable-pixmap
+8431:   > test 1 search/1 = [offset 0] '/* XPM */' image/x-xpmi
+9221:   > test 1 search/1 = [offset 0] '#!/usr/bin/env node' application/javascript
+9223:   > test 1 search/1 = [offset 0] '#!/usr/bin/env nodejs' application/javascript
+12248:  > test 1 search/1 = [offset 0] '\<TeXmacs|' text/texmacs
+12283:  > test 1 search/1 = [offset 0] '#!/usr/bin/env lua' text/x-lua
+12285:  > test 1 search/1 = [offset 0] '#! /usr/bin/env lua' text/x-lua
+15488:  > test 1 search/1 = [offset 0] 'eval "exec /bin/perl' text/x-perl
+15490:  > test 1 search/1 = [offset 0] 'eval "exec /usr/bin/perl' text/x-perl
+15492:  > test 1 search/1 = [offset 0] 'eval "exec /usr/local/bin/perl' text/x-perl
+15494:  > test 1 search/1 = [offset 0] 'eval '(exit $?0)' && eval 'exec' text/x-perl
+15496:  > test 1 search/1 = [offset 0] '#!/usr/bin/env perl' text/x-perl
+15498:  > test 1 search/1 = [offset 0] '#! /usr/bin/env perl' text/x-perl
+15500:  > test 1 search/1 = [offset 0] '#!' 
+15501:        test 9 regex = [offset 0] '\^#!.*/bin/perl$' text/x-perl
+15930:  > test 1 search/1 = [offset 0] '#!/usr/bin/env python' text/x-python
+15932:  > test 1 search/1 = [offset 0] '#! /usr/bin/env python' text/x-python
+17118:  > test 1 search/1 = [offset 0] '#!/usr/bin/env ruby' text/x-ruby
+17120:  > test 1 search/1 = [offset 0] '#! /usr/bin/env ruby' text/x-ruby
+18783:  > test 1 search/1 = [offset 0] '#!/usr/bin/env tcl' text/x-tcl
+18785:  > test 1 search/1 = [offset 0] '#! /usr/bin/env tcl' text/x-tcl
+18791:  > test 1 search/1 = [offset 0] '#!/usr/bin/env wish' text/x-tcl
+18793:  > test 1 search/1 = [offset 0] '#! /usr/bin/env wish' text/x-tcl
+18851:  > test 1 search/1 = [offset 0] '\\input texinfo' text/x-texinfo
+18853:  > test 1 search/1 = [offset 0] 'This is Info file' text/x-info
+3991:   > test 1 search/1/c = [offset 0] '<?php' text/x-php
+17596:  > test 1 search/1/c/w = [offset 0] '\<?xml' application/xml
+3998:   > test 1 search/1/w = [offset 0] '#! /usr/local/bin/php' text/x-php
+4001:   > test 1 search/1/w = [offset 0] '#! /usr/bin/php' text/x-php
+9213:   > test 1 search/1/w = [offset 0] '#!/bin/node' application/javascript
+9215:   > test 1 search/1/w = [offset 0] '#!/usr/bin/node' application/javascript
+9217:   > test 1 search/1/w = [offset 0] '#!/bin/nodejs' application/javascript
+9219:   > test 1 search/1/w = [offset 0] '#!/usr/bin/nodejs' application/javascript
+12279:  > test 1 search/1/w = [offset 0] '#! /usr/bin/lua' text/x-lua
+12281:  > test 1 search/1/w = [offset 0] '#! /usr/local/bin/lua' text/x-lua
+15926:  > test 1 search/1/w = [offset 0] '#! /usr/bin/python' text/x-python
+15928:  > test 1 search/1/w = [offset 0] '#! /usr/local/bin/python' text/x-python
+17114:  > test 1 search/1/w = [offset 0] '#! /usr/bin/ruby' text/x-ruby
+17116:  > test 1 search/1/w = [offset 0] '#! /usr/local/bin/ruby' text/x-ruby
+17614:  > test 1 search/1/w = [offset 0] '\<?xml' application/xml
+17617:  > test 1 search/1/w = [offset 0] '\<?XML' application/xml
+18779:  > test 1 search/1/w = [offset 0] '#! /usr/bin/tcl' text/x-tcl
+18781:  > test 1 search/1/w = [offset 0] '#! /usr/local/bin/tcl' text/x-tcl
+18787:  > test 1 search/1/w = [offset 0] '#! /usr/bin/wish' text/x-tcl
+18789:  > test 1 search/1/w = [offset 0] '#! /usr/local/bin/wish' text/x-tcl
+15941:  > test 1 search/4096 = [offset 0] 'def __init__' 
+15942:        test 1 search/64 = [offset & 0] 'self' text/x-python
+15957:  > test 1 search/4096 = [offset 0] 'try:' 
+15960:        test 1 search/4096 = [offset & 0] 'finally:' text/x-python
+15958:        test 9 regex = [offset & 0] '\^\\s*except.*:' text/x-python
+18857:  > test 1 search/4096 = [offset 0] '\\input' text/x-tex
+18860:  > test 1 search/4096 = [offset 0] '\\begin' text/x-tex
+18863:  > test 1 search/4096 = [offset 0] '\\section' text/x-tex
+18866:  > test 1 search/4096 = [offset 0] '\\setlength' text/x-tex
+18869:  > test 1 search/4096 = [offset 0] '\\documentstyle' text/x-tex
+18872:  > test 1 search/4096 = [offset 0] '\\chapter' text/x-tex
+18875:  > test 1 search/4096 = [offset 0] '\\documentclass' text/x-tex
+18878:  > test 1 search/4096 = [offset 0] '\\relax' text/x-tex
+18881:  > test 1 search/4096 = [offset 0] '\\contentsline' text/x-tex
+18884:  > test 1 search/4096 = [offset 0] '% -*-latex-*-' text/x-tex
+17569:  > test 1 search/4096/W/c = [offset 0] '\<!doctype html' text/html
+17572:  > test 1 search/4096/c/w = [offset 0] '\<head' text/html
+17575:  > test 1 search/4096/c/w = [offset 0] '\<title' text/html
+17578:  > test 1 search/4096/c/w = [offset 0] '\<html' text/html
+17581:  > test 1 search/4096/c/w = [offset 0] '\<script' text/html
+17584:  > test 1 search/4096/c/w = [offset 0] '\<style' text/html
+17587:  > test 1 search/4096/c/w = [offset 0] '\<table' text/html
+17590:  > test 1 search/4096/c/w = [offset 0] '\<a href=' text/html
+1181:   > test 9 belong = [offset 0] '0x3026b275' video/x-ms-asf
+2289:   > test 9 belong = [offset 0] '0x1ee7ff00' application/x-eet
+2629:   > test 9 belong = [offset 0] '0x2e7261fd' audio/x-pn-realaudio
+3676:   > test 9 belong = [offset 0] '0xcafebabe' 
+3677:         test 9 belong > [offset 4] '30' application/x-java-applet
+3690:   > test 9 belong = [offset 0] '0xcafed00d' 
+3692:         test 9 byte x [offset 4] 'x' application/x-java-pack200
+3696:   > test 9 belong = [offset 0] '0xcafed00d' 
+3698:         test 9 byte x [offset 4] 'x' application/x-java-pack200
+4755:   > test 9 belong = [offset 0] '0x13579acd' application/x-gdbm
+4759:   > test 9 belong = [offset 0] '0x13579acf' application/x-gdbm
+6133:   > test 9 belong = [offset 0] '00000004' application/x-font-sfn
+8879:   > test 9 belong = [offset 0] '0x0e031301' application/x-hdf
+12822:  > test 9 belong = [offset 0] '0x1a45dfa3' 
+12824:        test 1 search/4096 = [offset 4] '\x42\x82' 
+12826:            test 0 string = [offset & 1] 'webm' video/webm
+12828:            test 0 string = [offset & 1] 'matroska' video/x-matroska
+13659:  > test 9 belong = [offset 0] '0x31be0000' application/msword
+13759:  > test 9 belong = [offset 0] '0x00000100' 
+13760:        test 9 byte = [offset 9] '0' 
+13761:            test 9 byte x [offset 0] 'x' image/x-icon
+13764:        test 9 ubyte = [offset 9] '0xff' 
+13765:            test 9 byte x [offset 0] 'x' image/x-icon
+13781:  > test 9 belong = [offset 0] '0x00000200' 
+13782:        test 9 byte = [offset 9] '0' 
+13783:            test 9 byte x [offset 0] 'x' image/x-cur
+13786:        test 9 ubyte = [offset 9] '0xff' 
+13787:            test 9 byte x [offset 0] 'x' image/x-cur
+17051:  > test 9 belong = [offset 0] '0xedabeedb' application/x-rpm
+8537:   > test 9 belong > [offset 0] '100' 
+8538:         test 9 belong < [offset 8] '3' 
+8539:             test 9 belong < [offset 12] '33' 
+8540:                 test 9 belong = [offset 4] '7' image/x-xwindowdump
+548:    > test 9 belong&0xFFFFFF00 = [offset 0] '0x00000100' 
+549:          test 9 byte = [offset 3] '0xBA' video/mpeg
+560:          test 9 byte = [offset 3] '0xB0' video/mpeg4-generic
+632:          test 9 byte = [offset 3] '0xB5' video/mpeg4-generic
+643:          test 9 byte = [offset 3] '0xB3' video/mpeg
+5356:   > test 9 beshort = [offset 0] '0x0b77' audio/vnd.dolby.dd-raw
+7048:   > test 9 beshort = [offset 0] '0x8502' text/PGP
+7053:   > test 9 beshort = [offset 0] '0x9901' application/x-gnupg-keyring
+9236:   > test 9 beshort = [offset 0] '0xffd8' image/jpeg
+15629:  > test 9 beshort = [offset 0] '0x9900' application/x-pgp-keyring
+15631:  > test 9 beshort = [offset 0] '0x9501' application/x-pgp-keyring
+15633:  > test 9 beshort = [offset 0] '0x9500' application/x-pgp-keyring
+15635:  > test 9 beshort = [offset 0] '0xa600' text/PGP
+1089:   > test 9 beshort&0xFFE0 = [offset 0] '0x56E0' audio/x-mp4a-latm
+1052:   > test 9 beshort&0xFFF6 = [offset 0] '0xFFF0' audio/x-hx-aac-adts
+762:    > test 9 beshort&0xFFFE = [offset 0] '0xFFFA' 
+764:          test 9 byte&0xF0 = [offset 2] '0x10' audio/mpeg
+766:          test 9 byte&0xF0 = [offset 2] '0x20' audio/mpeg
+768:          test 9 byte&0xF0 = [offset 2] '0x30' audio/mpeg
+770:          test 9 byte&0xF0 = [offset 2] '0x40' audio/mpeg
+772:          test 9 byte&0xF0 = [offset 2] '0x50' audio/mpeg
+774:          test 9 byte&0xF0 = [offset 2] '0x60' audio/mpeg
+776:          test 9 byte&0xF0 = [offset 2] '0x70' audio/mpeg
+778:          test 9 byte&0xF0 = [offset 2] '0x80' audio/mpeg
+780:          test 9 byte&0xF0 = [offset 2] '0x90' audio/mpeg
+782:          test 9 byte&0xF0 = [offset 2] '0xA0' audio/mpeg
+784:          test 9 byte&0xF0 = [offset 2] '0xB0' audio/mpeg
+786:          test 9 byte&0xF0 = [offset 2] '0xC0' audio/mpeg
+788:          test 9 byte&0xF0 = [offset 2] '0xD0' audio/mpeg
+790:          test 9 byte&0xF0 = [offset 2] '0xE0' audio/mpeg
+810:    > test 9 beshort&0xFFFE = [offset 0] '0xFFFC' audio/mpeg
+885:    > test 9 beshort&0xFFFE = [offset 0] '0xFFF2' audio/mpeg
+920:    > test 9 beshort&0xFFFE = [offset 0] '0xFFF4' audio/mpeg
+955:    > test 9 beshort&0xFFFE = [offset 0] '0xFFF6' audio/mpeg
+990:    > test 9 beshort&0xFFFE = [offset 0] '0xFFE2' audio/mpeg
+2314:   > test 9 lelong = [offset 0] '0x10201A7A' x-epoc/x-sisx-app
+4252:   > test 9 lelong = [offset 0] '0x184d2204' application/x-lz4
+4255:   > test 9 lelong = [offset 0] '0x184c2103' application/x-lz4
+4257:   > test 9 lelong = [offset 0] '0x184c2102' application/x-lz4
+4757:   > test 9 lelong = [offset 0] '0x13579acd' application/x-gdbm
+4761:   > test 9 lelong = [offset 0] '0x13579acf' application/x-gdbm
+5598:   > test 9 lelong = [offset 0] '0x0ef1fab9' 
+5626:         test 9 leshort = [offset 16] '0' application/octet-stream
+5628:         test 9 leshort = [offset 16] '1' application/x-object
+5630:         test 9 leshort = [offset 16] '2' application/x-executable
+5632:         test 9 leshort = [offset 16] '3' application/x-sharedlib
+5634:         test 9 leshort = [offset 16] '4' application/x-coredump
+5961:   > test 9 lelong = [offset 0] '0x10000037' 
+5968:         test 9 lelong = [offset 4] '0x1000006D' 
+5969:             test 9 lelong = [offset 8] '0x1000007D' image/x-epoc-sketch
+5972:             test 9 lelong = [offset 8] '0x1000007F' application/x-epoc-word
+5974:             test 9 lelong = [offset 8] '0x10000085' application/x-epoc-opl
+5977:             test 9 lelong = [offset 8] '0x10000088' application/x-epoc-sheet
+5980:         test 9 lelong = [offset 4] '0x10000073' application/x-epoc-opo
+5982:         test 9 lelong = [offset 4] '0x10000074' application/x-epoc-app
+5990:   > test 9 lelong = [offset 0] '0x10000050' 
+5991:         test 9 lelong = [offset 4] '0x1000006D' 
+5992:             test 9 lelong = [offset 8] '0x10000084' application/x-epoc-agenda
+5994:             test 9 lelong = [offset 8] '0x10000086' application/x-epoc-data
+5996:             test 9 lelong = [offset 8] '0x10000CEA' application/x-epoc-jotter
+6137:   > test 9 lelong = [offset 0] '00000004' 
+6138:         test 9 lelong = [offset 104] '00000004' application/x-font-sfn
+8819:   > test 9 lelong = [offset 0] '20000630' image/x-exr
+4232:   > test 9 lelong&0xffffff = [offset 0] '0x5d' 
+4233:         test 9 leshort = [offset 12] '0xff' application/x-lzma
+4099:   > test 9 leshort = [offset 0] '0x1f1f' application/octet-stream
+4105:   > test 9 leshort = [offset 0] '0x1fff' application/octet-stream
+4111:   > test 9 leshort = [offset 0] '0145405' application/octet-stream
+1111:   > test 9 leshort = [offset 4] '0xAF11' 
+1113:         test 9 leshort = [offset 8] '320' 
+1114:             test 9 leshort = [offset 10] '200' 
+1115:                 test 9 leshort = [offset 12] '8' video/x-fli
+1124:   > test 9 leshort = [offset 4] '0xAF12' 
+1126:         test 9 leshort = [offset 12] '8' video/x-flc
+20141:  > test 9 leshort&0xFeFe = [offset 0] '0x0000' 
+20143:        test 9 ulelong&0xFCffFe00 = [offset 4] '0x00000000' 
+20145:            test 9 ulelong > [offset 68] '0x57' 
+20148:                test 9 ubelong&0xffE0C519 = [offset (68 l - 1)] '0x00400018' application/x-pnf
+15937:  > test 9 regex = [offset 0] '\^from\\s+(\\w|\\.)+\\s+import.*$' text/x-python
+15964:  > test 9 regex = [offset 0] '\^( |\\t){0,50}def {1,50}[a-zA-Z]{1,100}' 
+15965:        test 9 regex = [offset & 0] ' {0,50}\\(([a-zA-Z]|,| ){1,255}\\):$' text/x-python
+17126:  > test 9 regex = [offset 0] '\^[ \t]*require[ \t]'[A-Za-z_/]+'' 
+17127:        test 9 regex = [offset 0] 'include [A-Z]|def [a-z]| do$' 
+17128:            test 9 regex = [offset 0] '\^[ \t]*end([ \t]*[;#].*)?$' text/x-ruby
+17130:  > test 9 regex = [offset 0] '\^[ \t]*(class|module)[ \t][A-Z]' 
+17131:        test 9 regex = [offset 0] '(modul|includ)e [A-Z]|def [a-z]' 
+17132:            test 9 regex = [offset 0] '\^[ \t]*end([ \t]*[;#].*)?$' text/x-ruby
+20064:  > test 9 regex/s = [offset 0] '\\`(\r\n|;|[[]|\xFF\xFE)' 
+20066:        test 1 search/8192 = [offset & 0] '[' 
+20124:            test 9 default x [offset & 0] 'x' 
+20125:                test 1 search/8192 = [offset & 0] '[' 
+20127:                    test 0 string/c = [offset & 0] 'version' application/x-setupscript
+20130:                    test 9 ubequad&0xFFdfFFdfFFdfFFdf = [offset & 0] '0x0056004500520053' 
+20132:                        test 9 ubequad&0xFFdfFFdfFFdfFFff = [offset & 0] '0x0049004f004e005d' application/x-setupscript
+20069:            test 9 regex/c = [offset & 0] '\^(autorun)]\r\n' 
+20070:                test 9 ubyte = [offset & 0] '0x5b' application/x-wine-extension-ini
+20074:                test 9 ubyte =! [offset & 0] '0x5b' application/x-setupscript
+20078:            test 9 regex/c = [offset & 0] '\^(version|strings)]' application/x-setupscript
+20082:            test 9 regex/c = [offset & 0] '\^(WinsockCRCList|OEMCPL)]' text/inf
+20087:            test 9 regex/c = [offset & 0] '\^(\.ShellClassInfo|DeleteOnCopy|LocalizedFileNames)]' application/x-wine-extension-ini
+20091:            test 9 regex/c = [offset & 0] '\^(don't load)]' application/x-wine-extension-ini
+20093:            test 9 regex/c = [offset & 0] '\^(ndishlp\\$|protman\\$|NETBEUI\\$)]' application/x-wine-extension-ini
+20097:            test 9 regex/c = [offset & 0] '\^(windows|Compatibility|embedding)]' application/x-wine-extension-ini
+20100:            test 9 regex/c = [offset & 0] '\^(boot|386enh|drivers)]' application/x-wine-extension-ini
+20103:            test 9 regex/c = [offset & 0] '\^(SafeList)]' application/x-wine-extension-ini
+20106:            test 9 regex/c = [offset & 0] '\^(boot\x20loader)]' application/x-wine-extension-ini
+20114:            test 9 ubequad&0xFFdfFFdfFFdfFFdf = [offset & 0] '0x0056004500520053' 
+20116:                test 9 ubequad&0xFFdfFFdfFFdfFFff = [offset & 0] '0x0049004f004e005d' application/x-setupscript
+20119:            test 9 ubequad&0xFFdfFFdfFFdfFFdf = [offset & 0] '0x0053005400520049' 
+20121:                test 9 ubequad&0xFFdfFFdfFFdfFFff = [offset & 0] '0x004e00470053005D' application/x-setupscript
+4893:   > test 9 ubelong&0x0000FFFF < [offset 0] '0x00000C20' 
+4982:         test 9 ubyte > [offset 0] '1' 
+5047:             test 9 default x [offset 0] 'x' application/x-dbf
+4985:             test 9 ubyte = [offset 0] '0x03' application/x-dbf
+4988:             test 9 ubyte = [offset 0] '0x04' application/x-dbf
+4991:             test 9 ubyte = [offset 0] '0x05' application/x-dbf
+4993:             test 9 ubyte = [offset 0] '0x30' application/x-dbf
+4995:             test 9 ubyte = [offset 0] '0x31' application/x-dbf
+4998:             test 9 ubyte = [offset 0] '0x32' application/x-dbf
+5001:             test 9 ubyte = [offset 0] '0x43' application/x-dbf
+5007:             test 9 ubyte = [offset 0] '0x7b' application/x-dbf
+5013:             test 9 ubyte = [offset 0] '0x83' application/x-dbf
+5016:             test 9 ubyte = [offset 0] '0x87' application/x-dbf
+5022:             test 9 ubyte = [offset 0] '0x8B' application/x-dbf
+5025:             test 9 ubyte = [offset 0] '0x8E' application/x-dbf
+5033:             test 9 ubyte = [offset 0] '0xCB' application/x-dbf
+5036:             test 9 ubyte = [offset 0] '0xE5' application/x-dbf
+5041:             test 9 ubyte = [offset 0] '0xF5' application/x-dbf
+8605:   > test 9 ubelong&0xffF8fe00 = [offset 0] '0x0a000000' 
+8607:         test 9 ubyte > [offset 3] '0' 
+8609:             test 9 ubyte < [offset 1] '6' 
+8610:                 test 9 ubyte =! [offset 1] '1' image/x-pcx
+11173:  > test 9 ulelong&0x804000E9 = [offset 0] '0x000000E9' 
+11177:        test 9 uleshort&0xf001f = [offset 11] '0' 
+11178:            test 9 uleshort < [offset 11] '32769' 
+11179:                test 9 uleshort > [offset 11] '31' 
+11180:                    test 9 ubyte&0xf0 = [offset 21] '0xF0' 
+11285:                        test 9 ubyte =! [offset 21] '0xF8' 
+11287:                            test 0 string =! [offset 54] 'FAT16' 
+11289:                                test 9 ulelong&0x00ffffF0 = [offset (11 s)] '0x00ffffF0' application/x-ima
+root depth 9

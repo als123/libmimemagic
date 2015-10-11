@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+This file gives a list of all languages in the ISO 639
+standard, and is used to provide translations via gettext
+
+Copyright (C) 2004-2006 Alastair McKinstry <mckinstry@computer.org>
+Copyright (C) 2004-2012 Christian Perrier <bubulle@debian.org>
+Copyright (C) 2005-2008 Tobias Quathamer <toddy@debian.org>
+
+    This file is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This file is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this file; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+
+Source: <http://www.loc.gov/standards/iso639-2/>
+-->
+
+<!DOCTYPE iso_639_entries [
+	<!ELEMENT iso_639_entries (iso_639_entry+)>
+	<!ELEMENT iso_639_entry EMPTY>
+	<!ATTLIST iso_639_entry
+		iso_639_2B_code		CDATA	#REQUIRED
+		iso_639_2T_code		CDATA	#REQUIRED
+		iso_639_1_code		CDATA	#IMPLIED
+		name			CDATA	#REQUIRED
+		common_name		CDATA	#IMPLIED
+	>
+]>
+
+<iso_639_entries>
+	<iso_639_entry
+		iso_639_2B_code="aar"
+		iso_639_2T_code="aar"
+		iso_639_1_code="aa"
+		name="Afar" />
+	<iso_639_entry
+		iso_639_2B_code="abk"
+		iso_639_2T_code="abk"
+		iso_639_1_code="ab"
+		name="Abkhazian" />
+	<iso_639_entry
+		iso_639_2B_code="ace"
+		iso_639_2T_code="ace"
+		name="Achinese" />
+	<iso_639_entry
+		iso_639_2B_code="ach"
+		iso_639_2T_code="ach"
+		name="Acoli" />
+	<iso_639_entry
+		iso_639_2B_code="ada"
+		iso_639_2T_code="ada"
+		name="Adangme" />
+	<iso_639_entry
+		iso_639_2B_code="ady"
+		iso_639_2T_code="ady"
+		name="Adyghe; Adygei" />
+	<iso_639_entry
+		iso_639_2B_code="afa"
+		iso_639_2T_code="afa"
+		name="Afro-Asiatic languages" />
+	<iso_639_entry
+		iso_639_2B_code="afh"
+		iso_639_2T_code="afh"
+		name="Afrihili" />
+	<iso_639_entry
+		iso_639_2B_code="afr"
+		iso_639_2T_code="afr"
+		iso_639_1_code="af"
+		name="Afrikaans" />
+	<iso_639_entry
+		iso_639_2B_code="ain"
+		iso_639_2T_code="ain"
+		name="Ainu" />
+	<iso_639_entry
+		iso_639_2B_code="aka"
+		iso_639_2T_code="aka"
+		iso_639_1_code="ak"
+		name="Akan" />
+	<iso_639_entry
+		iso_639_2B_code="akk"
+		iso_639_2T_code="akk"
+		name="Akkadian" />
+	<iso_639_entry
+		iso_639_2B_code="alb"
+		iso_639_2T_code="sqi"
+		iso_639_1_code="sq"
+		name="Albanian" />
+	<iso_639_entry
+		iso_639_2B_code="ale"
+		iso_639_2T_code="ale"
+		name="Aleut" />
+	<iso_639_entry
+		iso_639_2B_code="alg"
+		iso_639_2T_code="alg"
+		name="Algonquian languages" />
+	<iso_639_entry
+		iso_639_2B_code="alt"
+		iso_639_2T_code="alt"
+		name="Southern Altai" />
+	<iso_639_entry
+		iso_639_2B_code="amh"
+		iso_639_2T_code="amh"
+		iso_639_1_code="am"
+		name="Amharic" />
+	<iso_639_entry
+		iso_639_2B_code="ang"
+		iso_639_2T_code="ang"
+		name="English, Old (ca. 450-1100)" />
+	<iso_639_entry
+		iso_639_2B_code="anp"
+		iso_639_2T_code="anp"
+		name="Angika" />
+	<iso_639_entry
+		iso_639_2B_code="apa"
+		iso_639_2T_code="apa"
+		name="Apache languages" />
+	<iso_639_entry
+		iso_639_2B_code="ara"
+		iso_639_2T_code="ara"
+		iso_639_1_code="ar"
+		name="Arabic" />
+	<iso_639_entry
+		iso_639_2B_code="arc"
+		iso_639_2T_code="arc"
+		name="Official Aramaic (700-300 BCE); Imperial Aramaic (700-300 BCE)" />
+	<iso_639_entry
+		iso_639_2B_code="arg"
+		iso_639_2T_code="arg"
+		iso_639_1_code="an"
+		name="Aragonese" />
+	<iso_639_entry
+		iso_639_2B_code="arm"
+		iso_639_2T_code="hye"
+		iso_639_1_code="hy"
+		name="Armenian" />
+	<iso_639_entry
+		iso_639_2B_code="arn"
+		iso_639_2T_code="arn"
+		name="Mapudungun; Mapuche" />
+	<iso_639_entry
+		iso_639_2B_code="arp"
+		iso_639_2T_code="arp"
+		name="Arapaho" />
+	<iso_639_entry
+		iso_639_2B_code="art"
+		iso_639_2T_code="art"
+		name="Artificial languages" />
+	<iso_639_entry
+		iso_639_2B_code="arw"
+		iso_639_2T_code="arw"
+		name="Arawak" />
+	<iso_639_entry
+		iso_639_2B_code="asm"
+		iso_639_2T_code="asm"
+		iso_639_1_code="as"
+		name="Assamese" />
+	<iso_639_entry
+		iso_639_2B_code="ast"
+		iso_639_2T_code="ast"
+		name="Asturian; Bable; Leonese; Asturleonese" />
+	<iso_639_entry
+		iso_639_2B_code="ath"
+		iso_639_2T_code="ath"
+		name="Athapascan languages" />
+	<iso_639_entry
+		iso_639_2B_code="aus"
+		iso_639_2T_code="aus"
+		name="Australian languages" />
+	<iso_639_entry
+		iso_639_2B_code="ava"
+		iso_639_2T_code="ava"
+		iso_639_1_code="av"
+		name="Avaric" />
+	<iso_639_entry
+		iso_639_2B_code="ave"
+		iso_639_2T_code="ave"
+		iso_639_1_code="ae"
+		name="Avestan" />
+	<iso_639_entry
+		iso_639_2B_code="awa"
+		iso_639_2T_code="awa"
+		name="Awadhi" />
+	<iso_639_entry
+		iso_639_2B_code="aym"
+		iso_639_2T_code="aym"
+		iso_639_1_code="ay"
+		name="Aymara" />
+	<iso_639_entry
+		iso_639_2B_code="aze"
+		iso_639_2T_code="aze"
+		iso_639_1_code="az"
+		name="Azerbaijani" />
+	<iso_639_entry
+		iso_639_2B_code="bad"
+		iso_639_2T_code="bad"
+		name="Banda languages" />
+	<iso_639_entry
+		iso_639_2B_code="bai"
+		iso_639_2T_code="bai"
+		name="Bamileke languages" />
+	<iso_639_entry
+		iso_639_2B_code="bak"
+		iso_639_2T_code="bak"
+		iso_639_1_code="ba"
+		name="Bashkir" />
+	<iso_639_entry
+		iso_639_2B_code="bal"
+		iso_639_2T_code="bal"
+		name="Baluchi" />
+	<iso_639_entry
+		iso_639_2B_code="bam"
+		iso_639_2T_code="bam"
+		iso_639_1_code="bm"
+		name="Bambara" />
+	<iso_639_entry
+		iso_639_2B_code="ban"
+		iso_639_2T_code="ban"
+		name="Balinese" />
+	<iso_639_entry
+		iso_639_2B_code="baq"
+		iso_639_2T_code="eus"
+		iso_639_1_code="eu"
+		name="Basque" />
+	<iso_639_entry
+		iso_639_2B_code="bas"
+		iso_639_2T_code="bas"
+		name="Basa" />
+	<iso_639_entry
+		iso_639_2B_code="bat"
+		iso_639_2T_code="bat"
+		name="Baltic languages" />
+	<iso_639_entry
+		iso_639_2B_code="bej"
+		iso_639_2T_code="bej"
+		name="Beja; Bedawiyet" />
+	<iso_639_entry
+		iso_639_2B_code="bel"
+		iso_639_2T_code="bel"
+		iso_639_1_code="be"
+		name="Belarusian" />
+	<iso_639_entry
+		iso_639_2B_code="bem"
+		iso_639_2T_code="bem"
+		name="Bemba" />
+	<iso_639_entry
+		iso_639_2B_code="ben"
+		iso_639_2T_code="ben"
+		iso_639_1_code="bn"
+		name="Bengali"
+		common_name="Bangla" />
+	<iso_639_entry
+		iso_639_2B_code="ber"
+		iso_639_2T_code="ber"
+		name="Berber languages" />
+	<iso_639_entry
+		iso_639_2B_code="bho"
+		iso_639_2T_code="bho"
+		name="Bhojpuri" />
+	<iso_639_entry
+		iso_639_2B_code="bih"
+		iso_639_2T_code="bih"
+		iso_639_1_code="bh"
+		name="Bihari languages" />
+	<iso_639_entry
+		iso_639_2B_code="bik"
+		iso_639_2T_code="bik"
+		name="Bikol" />
+	<iso_639_entry
+		iso_639_2B_code="bin"
+		iso_639_2T_code="bin"
+		name="Bini; Edo" />
+	<iso_639_entry
+		iso_639_2B_code="bis"
+		iso_639_2T_code="bis"
+		iso_639_1_code="bi"
+		name="Bislama" />
+	<iso_639_entry
+		iso_639_2B_code="bla"
+		iso_639_2T_code="bla"
+		name="Siksika" />
+	<iso_639_entry
+		iso_639_2B_code="bnt"
+		iso_639_2T_code="bnt"
+		name="Bantu languages" />
+	<iso_639_entry
+		iso_639_2B_code="bos"
+		iso_639_2T_code="bos"
+		iso_639_1_code="bs"
+		name="Bosnian" />
+	<iso_639_entry
+		iso_639_2B_code="bra"
+		iso_639_2T_code="bra"
+		name="Braj" />
+	<iso_639_entry
+		iso_639_2B_code="bre"
+		iso_639_2T_code="bre"
+		iso_639_1_code="br"
+		name="Breton" />
+	<iso_639_entry
+		iso_639_2B_code="btk"
+		iso_639_2T_code="btk"
+		name="Batak languages" />
+	<iso_639_entry
+		iso_639_2B_code="bua"
+		iso_639_2T_code="bua"
+		name="Buriat" />
+	<iso_639_entry
+		iso_639_2B_code="bug"
+		iso_639_2T_code="bug"
+		name="Buginese" />
+	<iso_639_entry
+		iso_639_2B_code="bul"
+		iso_639_2T_code="bul"
+		iso_639_1_code="bg"
+		name="Bulgarian" />
+	<iso_639_entry
+		iso_639_2B_code="bur"
+		iso_639_2T_code="mya"
+		iso_639_1_code="my"
+		name="Burmese" />
+	<iso_639_entry
+		iso_639_2B_code="byn"
+		iso_639_2T_code="byn"
+		name="Blin; Bilin" />
+	<iso_639_entry
+		iso_639_2B_code="cad"
+		iso_639_2T_code="cad"
+		name="Caddo" />
+	<iso_639_entry
+		iso_639_2B_code="cai"
+		iso_639_2T_code="cai"
+		name="Central American Indian languages" />
+	<iso_639_entry
+		iso_639_2B_code="car"
+		iso_639_2T_code="car"

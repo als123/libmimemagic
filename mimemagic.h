@@ -27,6 +27,10 @@
 #ifndef MIME_MAGIC_HH
 #define MIME_MAGIC_HH
 
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
 //======================================================================
 
 enum MimeMagicFlags
@@ -59,5 +63,9 @@ getMimeType(
     );
 
 //======================================================================
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif // MIME_MAGIC_HH

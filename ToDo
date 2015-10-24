@@ -6,3 +6,6 @@ Some tests set a MIME and have subtests. For example
 At the moment we ignore the subtests and stop at the first MIME.
 
 The rule strength hasn't been taken into account.
+
+We could add some local magic rules in a magic.local to fill in
+missing stuff such as ELF.

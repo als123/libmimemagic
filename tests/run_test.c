@@ -27,6 +27,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <getopt.h>
 
 #include <fcntl.h>
@@ -35,6 +36,16 @@
 #include <unistd.h>
 
 #include "mimemagic.h"
+
+//======================================================================
+
+/*  We allow the special mime type of 'unrecognised'.
+*/
+static void
+usage()
+{
+    fprintf(stderr, "Usage: run_test: -f FILE [-m MIME] [-p | -P int]\n");
+}
 
 //======================================================================
 
@@ -102,13 +113,6 @@ reportTime(
 
 
 //======================================================================
-
-
-static void
-usage()
-{
-    fprintf(stderr, "Usage: run_test: -f FILE [-m MIME]\n");
-}
 
 
 int
@@ -187,13 +191,24 @@ main(int argc, char** argv)
 
         if (expected)
         {
+            if (strcmp("unrecognised", expected) == 0 && err < 0)
+            {
+                err = 1;
+                mimeType = expected;
+            }
+            else
+            if (err > 0)
+            {
+                err = (strcmp(mimeType, expected) == 0);
+            }
+
             if (err > 0)
             {
                 printf("Passed: %s: %s\n", testFile, mimeType);
             }
             else
             {
-                printf("Failed: %s\n", testFile);
+                printf("Failed: %s, not %s\n", testFile, expected);
             }
         }
         else

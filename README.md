@@ -39,6 +39,9 @@ decision process has been compiled from the magic file.
 *   The first MIME type found is returned. The weighing of different
     strengths carried out by `libmagic` is not implemented.
 
+*   The 'use' mechanism in the magic file is not currently implemented.
+    This misses some file types such as ELF and pcap and file partitions.
+
 # Notes on Usage 
 
 There is a pkgconfig file named `libmimemagic`

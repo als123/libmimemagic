@@ -966,7 +966,6 @@ static StringMap stringMap2[] = {
     {"\x00" "\x01" "\x00" "\x00" "\x00",    sizeof("\x00" "\x01" "\x00" "\x00" "\x00") - 1,    "application/x-font-ttf"},
     {"\x04" "%!",    sizeof("\x04" "%!") - 1,    "application/postscript"},
     {"\t" "\x04" "\x06" "\x00" "\x00" "\x00" "\x10" "\x00",    sizeof("\t" "\x04" "\x06" "\x00" "\x00" "\x00" "\x10" "\x00") - 1,    "application/vnd.ms-excel"},
-    {"\n(",    sizeof("\n(") - 1,    "application/x-elc"},
     {"\x1f" "\x1e",    sizeof("\x1f" "\x1e") - 1,    "application/octet-stream"},
     {"# KDE Config File",    sizeof("# KDE Config File") - 1,    "application/x-kdelnk"},
     {"# PaCkAgE DaTaStReAm",    sizeof("# PaCkAgE DaTaStReAm") - 1,    "application/x-svr4-package"},
@@ -1057,7 +1056,7 @@ static StringMap stringMap2[] = {
     {"\xfe" "7" "\x00" "#",    sizeof("\xfe" "7" "\x00" "#") - 1,    "application/msword"},
     {"\xff" "\x1f",    sizeof("\xff" "\x1f") - 1,    "application/octet-stream"},
 };
-static const size_t stringMap2Count = 93;
+static const size_t stringMap2Count = 92;
 
 static StringMap stringMap3[] = {
     {"3",    sizeof("3") - 1,    "application/vnd.cups-raster"},
@@ -3380,23 +3379,6 @@ runTests(const Byte* buf, size_t len, const char** mime)
         }
     }
 
-    // line 12232
-    off0 = 0;
-    rslt = stringEqual(buf, len, ";ELC", sizeof(";ELC") - 1, &off0);
-    if (rslt < 0) haveError = True;
-    if (rslt > 0)
-    {
-        // line 12234
-        off1 = 4;
-        rslt = byteMatch(buf, len, 32, CompareLt, 0xffffffff, &off1);
-        if (rslt < 0) haveError = True;
-        if (rslt > 0)
-        {
-            *mime = "application/x-elc";
-            return Match;
-        }
-    }
-
     // line 13167
     off0 = 0;
     rslt = stringEqual(buf, len, "@", sizeof("@") - 1, &off0);
@@ -5508,28 +5490,54 @@ runTests(const Byte* buf, size_t len, const char** mime)
 
 
 
-static inline size_t
-utf8ByteLen(const Byte* bytes)
-{
-    if (bytes)
-    {
-        Byte b = bytes[0];
 
-        if ((b & 0x80) == 0)    return 1;
-        if ((b & 0xe0) == 0xc0) return 2;
-        if ((b & 0xf0) == 0xe0) return 3;
-        if ((b & 0xf8) == 0xf0) return 4;
-        if ((b & 0xfc) == 0xf8) return 5;       // a little too general perhaps
-        return 6;
+static inline int
+utf8Byte(const Byte** bufp)
+{
+    int value = -1;
+    const Byte* bp = *bufp;
+
+    if ((bp[0] & 0x80) == 0)
+    {
+        value = bp[0] & 0x7f;
+        *bufp += 1;
     }
-    
-    return 0;
+
+    if ((bp[0] & 0xe0) == 0xc0)
+    {
+        if ((bp[1] & 0xc0) == 0x80)
+        {
+            value = ((bp[0] & 0x1f) << 6) | (bp[1] & 0x3f);
+            *bufp += 2;
+        }
+    }
+
+    if ((bp[0] & 0xf0) == 0xe0)
+    {
+        if ((bp[1] & 0xc0) == 0x80 && (bp[2] & 0xc0) == 0x80)
+        {
+            value = ((bp[0] & 0x0f) << 12) | ((bp[1] & 0x3f) << 6) | (bp[2] & 0x3f);
+            *bufp += 3;
+        }
+    }
+
+    if ((bp[0] & 0xf8) == 0xf0)
+    {
+        if ((bp[1] & 0xc0) == 0x80 && (bp[2] & 0xc0) == 0x80 && (bp[3] & 0xc0) == 0x80)
+        {
+            value = ((bp[0] & 0x7) << 18) | ((bp[1] & 0x3f) << 12) | ((bp[2] & 0x3f) << 6) | (bp[3] & 0x3f);
+            *bufp += 4;
+        }
+    }
+
+    // UTF8 no longer does lengths 5 and 6
+    return value;
 }
 
 
 
-static Result
-tryPlainText(const Byte* buf, size_t len, const char** mime)
+Result
+tryPlainText(const Byte* buf, size_t len, const char** mime, int flags)
 {
     /*  Ensure that the mime string is a constant and doesn't
         need to be freed.
@@ -5540,6 +5548,8 @@ tryPlainText(const Byte* buf, size_t len, const char** mime)
     const Byte* bend = buf + len;
     const Byte* uend;                   // for the utf8 search
     static const size_t Limit = 1024;   // Limit the search to 1024 bytes
+    size_t      nuls    = 0;
+    size_t      funnies = False;
 
     if (len > Limit)
     {
@@ -5548,12 +5558,25 @@ tryPlainText(const Byte* buf, size_t len, const char** mime)
 
     for (; bp < bend; ++bp)
     {
-        if (*bp >= 128)
+        Byte b = *bp;
+
+        if (b == 0)
+        {
+            ++nuls;
+        }
+        else
+        if (b < 32 && b != '\r' && b != '\n' && b != '\t')
+        {
+            ++funnies;
+        }
+        if (b >= 128)
         {
             ascii = False;
-            break;
         }
     }
+
+    // Note len / 100 could be zero
+    ascii = ascii && nuls == 0 && funnies <= (len / 100);
 
     if (ascii)
     {
@@ -5584,18 +5607,31 @@ tryPlainText(const Byte* buf, size_t len, const char** mime)
     uend = bend - 4;
     utf8 = True;
 
+    nuls    = 0;
+    funnies = False;
+
     for (bp = buf; bp < uend; )
     {
-        size_t n = utf8ByteLen(buf);
+        int b = utf8Byte(&bp);
 
-        if (n == 0)
+        if (b < 0)
         {
             utf8 = False;
             break;
         }
 
-        bp += n;
+        if (b == 0)
+        {
+            ++nuls;
+        }
+        else
+        if (b < 32 && b != '\r' && b != '\n' && b != '\t')
+        {
+            ++funnies;
+        }
     }
+
+    utf8 = utf8 && nuls == 0 && funnies <= (len / 100);
 
     if (utf8)
     {
@@ -5628,7 +5664,7 @@ getMimeType(const Byte* buf, size_t len, const char** mime, int flags)
     {
         if (!(flags & MimeMagicNoTryText))
         {
-            r = tryPlainText(buf, len, mime);
+            r = tryPlainText(buf, len, mime, flags);
         }
     }
 

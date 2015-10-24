@@ -62,6 +62,24 @@ getMimeType(
     int             flags
     );
 
+
+/*  This is like getMimeType() except that it only checks if the
+    file can be recognised as text in some character set. The only
+    character sets recognised at the moment are ASCII and UTF-8.
+
+    This is the step that would be omitted by getMimeType() when the
+    MimeMagicNoTryText flag is set.
+
+    The flags argument is currently ignored.
+*/
+extern int
+tryPlainText(
+    const unsigned char* buf,
+    size_t          len,
+    const char**    mime,
+    int             flags
+    );
+
 //======================================================================
 
 #ifdef __cplusplus

@@ -142,7 +142,7 @@ def splitLine(line):
     return fields
 
 
-# We expect text lie
+# We expect text like
 #    # Screamtracker 2 module sound data
 #    audio/x-mod
 
@@ -427,7 +427,7 @@ class Test:
     def pruneTree(self, exceptions):
         # If any subtest has a MIME in the exception list
         # then remove it.  Recurse down the tree.
-        # Set the active flag on every test that 
+        # Set the active flag on every test that leads to a MIME.
         newsubs = []
 
         for t in self.subtests:

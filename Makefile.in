@@ -60,7 +60,7 @@ $(LIB_A): mimemagic.o
 	$(AR) rv $(LIB_A) mimemagic.o
 
 
-mimemagic.c: magic prologue.c
+mimemagic.c: magic prologue.c epilogue.c
 	compile.py > analysis.out
 
 regen::

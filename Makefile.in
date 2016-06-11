@@ -46,14 +46,18 @@ all: $(LIB_SO) $(LIB_A)
 install: $(LIB_SO) $(LIB_A)
 	$(INSTALL) -d $(libdir) $(incdir) $(docsubdir)
 	$(INSTALL) mimemagic.h $(incdir)
-	$(INSTALL) $(LIB_SO) $(libdir)/$(LIB_SO).$(LIB_VERSION)
+	$(INSTALL) -m 0755 $(LIB_SO) $(libdir)/$(LIB_SO).$(LIB_VERSION)
 	ln -s $(LIB_SO).$(LIB_VERSION) $(libdir)/$(LIB_SO).$(LIB_MAJOR)
 	ln -s $(LIB_SO).$(LIB_MAJOR) $(libdir)/$(LIB_SO)
 	$(INSTALL) $(LIB_A) $(libdir)
 
 
+# This -soname sets the name that will be a Requires and Provides in the rpms.
+# The name declared will be:
+#	libmimemagic.so.0()(64bit)
+# Programs that link against the library will require this name.
 $(LIB_SO): mimemagic.o
-	$(CC) -shared -o $(LIB_SO) mimemagic.o
+	$(CC) -shared -Wl,-soname,libmimemagic.so.0 -o $(LIB_SO) mimemagic.o
 
 
 $(LIB_A): mimemagic.o

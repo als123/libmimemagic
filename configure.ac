@@ -1,7 +1,7 @@
 
 AC_PREREQ(2.69)
 AC_INIT([libmimemagic], [0.2], [als@iinet.net.au])
-AC_SUBST(PACKAGE_RELEASE, [1])
+AC_SUBST(PACKAGE_RELEASE, [2])
 
 #AC_CONFIG_SRCDIR([Exceptions.hh])
 #AC_CONFIG_HEADER([config.h])

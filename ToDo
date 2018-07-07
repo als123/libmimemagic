@@ -9,3 +9,5 @@ The rule strength hasn't been taken into account.
 
 We could add some local magic rules in a magic.local to fill in
 missing stuff such as ELF.
+
+Note in the documentation that the API is thread-safe.

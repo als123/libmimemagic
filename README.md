@@ -51,3 +51,4 @@ library can be linked in to an executable and have no external
 dependencies. It has been compiled with `-fpic` so it can be linked into
 another shared library.
 
+The API is thread-safe.

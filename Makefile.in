@@ -63,19 +63,26 @@ $(LIB_SO): mimemagic.o
 $(LIB_A): mimemagic.o
 	$(AR) rv $(LIB_A) mimemagic.o
 
+CLEANFILES = analysis.out mimemagic.c *.pyc *.o magic.timestamp
 
 mimemagic.c: magic prologue.c epilogue.c
 	compile.py > analysis.out
 
+magic:	magic.timestamp
+	cat >$@ `sh original_list`
+
+magic.timestamp:
+	touch magic.timestamp
+
 regen::
-	$(RM) mimemagic.c
+	$(RM) mimemagic.c magic.timestamp
 	compile.py > analysis.out
 
 %.html: %.md
 	pandoc --from markdown_github --to html5 -H style.css -o $@ $^
 
 clean::
-	$(RM) analysis.out *.pyc *.o
+	$(RM) $(CLEANFILES)
 
 veryclean:: clean
 	$(RM) $(LIB_A) $(LIB_SO) README.html

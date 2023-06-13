@@ -1,0 +1,5 @@
+#------------------------------------------------------------------------------
+# msad:  file(1) magic for msad
+# Microsoft visual C
+# This must precede the heuristic for raw G3 data
+4	string	Standard\ Jet\ DB	Microsoft Access Database

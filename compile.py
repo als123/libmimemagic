@@ -47,6 +47,9 @@ offsetRE  = re.compile(r"^(\&)?([^.]+)(\.([bislBISL]))?([+*/%&|^-].+)?$")
 
 strengthRE = re.compile(r"^([+*/-])\s*(\w+)$")
 
+# This recognises an incomplete test
+testIncompleteRE = re.compile(r"^[<>=]\s*$")
+
 def stripEndCmnt(line):
     # Strip comments from the end of a line
     return endCmntRE.sub("", line, count = 1)
@@ -84,6 +87,10 @@ class Fields:
 #
 # There may be white space between the leading > and offset.
 # We return the leading > as a separate field.
+#
+# More recently there have been test values with white space in
+# them, e.g. "< 100". We have to handle this. The original C
+# code recognised the fields on the fly so had full context.
 def splitLine(line):
     Level  = 1
     Offset = 2
@@ -132,7 +139,10 @@ def splitLine(line):
         elif c == '\\':
             inQuote = True
         elif c == ' ' or c == '\t':
-            inRest = True
+            # Keep goingif the target looks like an incomplete test
+            m = testIncompleteRE.match(fields.target)
+            if m == None:
+                inRest = True
         else:
             fields.target += c
 
@@ -516,7 +526,8 @@ class Test:
             #active = '*' if self.active else ' '
             active = ''
             action = self.setMime if self.setMime else ""
-            return "test%s %d %s '%s' %s" % (active, self.priority, self.testID, self.target, action)
+            return "test%s pri=%d id='%s' code='%s' %s" % (active, self.priority, self.testID, 
+                        self.testCode, action)
         return "root"
 
 
@@ -647,6 +658,10 @@ def parseFields(fields, lnum, lastTest, stack):
         if lastTest:
             lastTest.setAction(mime)
 
+    elif fields.offset == '!:ext':
+        # At the moment we don't retain the extension names
+        pass
+
     elif fields.offset == '!:strength':
         # There may not be WS between the operator and operand
         m = strengthRE.match(fields.test + fields.target)
@@ -664,9 +679,9 @@ def parseFields(fields, lnum, lastTest, stack):
         name = fields.target
         #print lnum, "Recognised name", name
 
-    elif fields.test == 'name':
+    elif fields.test == 'use':
         use = fields.target
-        #print lnum, "Recognised use", use
+        print >> sys.stderr, lnum, "The 'use' test is not implemented, using:", use
 
     else:
         level  = len(fields.levels)

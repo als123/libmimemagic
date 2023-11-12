@@ -28,6 +28,7 @@ cp -r \
     README.html \
     *.in \
     Makefile \
+    Magdir \
     compile.py \
     configure \
     epilogue.c \
@@ -38,6 +39,7 @@ cp -r \
     mimemagic.c \
     mimemagic.h \
     mimemagic.man \
+    original_list \
     prologue.c \
     utils.py \
     $base
